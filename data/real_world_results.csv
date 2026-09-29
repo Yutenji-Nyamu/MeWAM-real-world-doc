@@ -1,0 +1,445 @@
+﻿paper,source,task,method,condition,metric,value,n,success_count,note
+X-WAM v2,Table 8 p21,Pack 1 earphone,XR-0,standard,progress_percent,100,24,24,n is stage count; 6 episodes per condition; retain printed rounding
+X-WAM v2,Table 8 p21,Pack 1 earphone,XR-0,standard,completion_time_s,54.66,,,average over fully completed episodes
+X-WAM v2,Table 8 p21,Pack 1 earphone,X-WAM,standard,progress_percent,100,24,24,n is stage count; 6 episodes per condition; retain printed rounding
+X-WAM v2,Table 8 p21,Pack 1 earphone,X-WAM,standard,completion_time_s,41.63,,,average over fully completed episodes
+X-WAM v2,Table 8 p21,Pack 2 earphones,XR-0,standard,progress_percent,79.1,48,38,n is stage count; 6 episodes per condition; retain printed rounding
+X-WAM v2,Table 8 p21,Pack 2 earphones,XR-0,standard,completion_time_s,115.44,,,average over fully completed episodes
+X-WAM v2,Table 8 p21,Pack 2 earphones,X-WAM,standard,progress_percent,93.8,48,45,n is stage count; 6 episodes per condition; retain printed rounding
+X-WAM v2,Table 8 p21,Pack 2 earphones,X-WAM,standard,completion_time_s,113.25,,,average over fully completed episodes
+X-WAM v2,Table 8 p21,Pack 3 earphones,XR-0,standard,progress_percent,63.9,72,46,n is stage count; 6 episodes per condition; retain printed rounding
+X-WAM v2,Table 8 p21,Pack 3 earphones,XR-0,standard,completion_time_s,195.66,,,average over fully completed episodes
+X-WAM v2,Table 8 p21,Pack 3 earphones,X-WAM,standard,progress_percent,68,72,49,n is stage count; 6 episodes per condition; retain printed rounding
+X-WAM v2,Table 8 p21,Pack 3 earphones,X-WAM,standard,completion_time_s,160.72,,,average over fully completed episodes
+X-WAM v2,Table 8 p21,Novel placements,XR-0,standard,progress_percent,58.3,24,14,n is stage count; 6 episodes per condition; retain printed rounding
+X-WAM v2,Table 8 p21,Novel placements,XR-0,standard,completion_time_s,89.63,,,average over fully completed episodes
+X-WAM v2,Table 8 p21,Novel placements,X-WAM,standard,progress_percent,70.8,24,17,n is stage count; 6 episodes per condition; retain printed rounding
+X-WAM v2,Table 8 p21,Novel placements,X-WAM,standard,completion_time_s,46.68,,,average over fully completed episodes
+X-WAM v2,Table 8 p21,Unseen tablecloth,XR-0,standard,progress_percent,66.7,24,16,n is stage count; 6 episodes per condition; retain printed rounding
+X-WAM v2,Table 8 p21,Unseen tablecloth,XR-0,standard,completion_time_s,65.73,,,average over fully completed episodes
+X-WAM v2,Table 8 p21,Unseen tablecloth,X-WAM,standard,progress_percent,66.7,24,16,n is stage count; 6 episodes per condition; retain printed rounding
+X-WAM v2,Table 8 p21,Unseen tablecloth,X-WAM,standard,completion_time_s,62.01,,,average over fully completed episodes
+X-WAM v2,Table 8 p21,Unseen distractors,XR-0,standard,progress_percent,66.7,24,16,n is stage count; 6 episodes per condition; retain printed rounding
+X-WAM v2,Table 8 p21,Unseen distractors,XR-0,standard,completion_time_s,76.32,,,average over fully completed episodes
+X-WAM v2,Table 8 p21,Unseen distractors,X-WAM,standard,progress_percent,75,24,18,n is stage count; 6 episodes per condition; retain printed rounding
+X-WAM v2,Table 8 p21,Unseen distractors,X-WAM,standard,completion_time_s,51.53,,,average over fully completed episodes
+OpenWAM v1,Table 6 p25,Stack Jenga,pi0.5,standard,success_rate_percent,65,20,13,
+OpenWAM v1,Table 6 p25,Stack Ring,pi0.5,standard,success_rate_percent,35,20,7,
+OpenWAM v1,Table 6 p25,Put Chili in Drawer,pi0.5,standard,success_rate_percent,70,20,14,
+OpenWAM v1,Table 6 p25,Put Jenga in Drawer,pi0.5,standard,success_rate_percent,75,20,15,
+OpenWAM v1,Table 6 p25,Hang on M,pi0.5,standard,success_rate_percent,35,20,7,
+OpenWAM v1,Table 6 p25,Hang on Cup,pi0.5,standard,success_rate_percent,50,20,10,
+OpenWAM v1,Table 6 p25,Average,pi0.5,standard,success_rate_percent,55.0,120,66,
+OpenWAM v1,Table 6 p25,Stack Jenga,LingBot-VA,standard,success_rate_percent,80,20,16,
+OpenWAM v1,Table 6 p25,Stack Ring,LingBot-VA,standard,success_rate_percent,75,20,15,
+OpenWAM v1,Table 6 p25,Put Chili in Drawer,LingBot-VA,standard,success_rate_percent,85,20,17,
+OpenWAM v1,Table 6 p25,Put Jenga in Drawer,LingBot-VA,standard,success_rate_percent,85,20,17,
+OpenWAM v1,Table 6 p25,Hang on M,LingBot-VA,standard,success_rate_percent,65,20,13,
+OpenWAM v1,Table 6 p25,Hang on Cup,LingBot-VA,standard,success_rate_percent,75,20,15,
+OpenWAM v1,Table 6 p25,Average,LingBot-VA,standard,success_rate_percent,77.5,120,93,
+OpenWAM v1,Table 6 p25,Stack Jenga,OpenWAM-alpha,standard,success_rate_percent,85,20,17,
+OpenWAM v1,Table 6 p25,Stack Ring,OpenWAM-alpha,standard,success_rate_percent,60,20,12,
+OpenWAM v1,Table 6 p25,Put Chili in Drawer,OpenWAM-alpha,standard,success_rate_percent,100,20,20,
+OpenWAM v1,Table 6 p25,Put Jenga in Drawer,OpenWAM-alpha,standard,success_rate_percent,100,20,20,
+OpenWAM v1,Table 6 p25,Hang on M,OpenWAM-alpha,standard,success_rate_percent,65,20,13,
+OpenWAM v1,Table 6 p25,Hang on Cup,OpenWAM-alpha,standard,success_rate_percent,85,20,17,
+OpenWAM v1,Table 6 p25,Average,OpenWAM-alpha,standard,success_rate_percent,82.5,120,99,
+OpenWAM v1,Table 8 p26,Stack Toy Tower,pi0.5,ID,success_rate_percent,10.0,10,1,
+OpenWAM v1,Table 8 p26,Stack Toy Tower,pi0.5,ID,progress_percent,53.3,30,16,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Stack Toy Tower,OpenWAM-alpha,ID,success_rate_percent,40.0,10,4,
+OpenWAM v1,Table 8 p26,Stack Toy Tower,OpenWAM-alpha,ID,progress_percent,70.0,30,21,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Stack Toy Tower,pi0.5,OOD,success_rate_percent,10.0,10,1,
+OpenWAM v1,Table 8 p26,Stack Toy Tower,pi0.5,OOD,progress_percent,40.0,30,12,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Stack Toy Tower,OpenWAM-alpha,OOD,success_rate_percent,30.0,10,3,
+OpenWAM v1,Table 8 p26,Stack Toy Tower,OpenWAM-alpha,OOD,progress_percent,56.7,30,17,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Collect Shuttlecocks,pi0.5,ID,success_rate_percent,20.0,10,2,
+OpenWAM v1,Table 8 p26,Collect Shuttlecocks,pi0.5,ID,progress_percent,31.4,35,11,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Collect Shuttlecocks,OpenWAM-alpha,ID,success_rate_percent,60.0,10,6,
+OpenWAM v1,Table 8 p26,Collect Shuttlecocks,OpenWAM-alpha,ID,progress_percent,82.9,35,29,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Collect Shuttlecocks,pi0.5,OOD,success_rate_percent,20.0,15,3,
+OpenWAM v1,Table 8 p26,Collect Shuttlecocks,pi0.5,OOD,progress_percent,31.5,54,17,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Collect Shuttlecocks,OpenWAM-alpha,OOD,success_rate_percent,26.7,15,4,
+OpenWAM v1,Table 8 p26,Collect Shuttlecocks,OpenWAM-alpha,OOD,progress_percent,52.6,57,30,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Put Away Clothes,pi0.5,ID,success_rate_percent,60.0,10,6,
+OpenWAM v1,Table 8 p26,Put Away Clothes,pi0.5,ID,progress_percent,86.7,30,26,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Put Away Clothes,OpenWAM-alpha,ID,success_rate_percent,100.0,10,10,
+OpenWAM v1,Table 8 p26,Put Away Clothes,OpenWAM-alpha,ID,progress_percent,100.0,30,30,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Put Away Clothes,pi0.5,OOD,success_rate_percent,45.0,20,9,
+OpenWAM v1,Table 8 p26,Put Away Clothes,pi0.5,OOD,progress_percent,75.0,60,45,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Put Away Clothes,OpenWAM-alpha,OOD,success_rate_percent,85.0,20,17,
+OpenWAM v1,Table 8 p26,Put Away Clothes,OpenWAM-alpha,OOD,progress_percent,91.7,60,55,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Twist off Bottle Cap,pi0.5,ID,success_rate_percent,30.0,10,3,
+OpenWAM v1,Table 8 p26,Twist off Bottle Cap,pi0.5,ID,progress_percent,80.0,10,8,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Twist off Bottle Cap,OpenWAM-alpha,ID,success_rate_percent,70.0,10,7,
+OpenWAM v1,Table 8 p26,Twist off Bottle Cap,OpenWAM-alpha,ID,progress_percent,100.0,10,10,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Twist off Bottle Cap,pi0.5,OOD,success_rate_percent,30.0,20,6,
+OpenWAM v1,Table 8 p26,Twist off Bottle Cap,pi0.5,OOD,progress_percent,65.0,20,13,n is manipulation-element count
+OpenWAM v1,Table 8 p26,Twist off Bottle Cap,OpenWAM-alpha,OOD,success_rate_percent,80.0,20,16,
+OpenWAM v1,Table 8 p26,Twist off Bottle Cap,OpenWAM-alpha,OOD,progress_percent,90.0,20,18,n is manipulation-element count
+OpenWAM v1,Table 7 p26,ARX X5: cover_blocks,X-VLA,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: cover_blocks,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: cover_blocks,Xiaomi-Robotics-0,standard,progress_percent,24,,,
+OpenWAM v1,Table 7 p26,ARX X5: cover_blocks,Xiaomi-Robotics-0,standard,success_rate_percent,20,,,
+OpenWAM v1,Table 7 p26,ARX X5: cover_blocks,GalaxeaVLA (G0),standard,progress_percent,1,,,
+OpenWAM v1,Table 7 p26,ARX X5: cover_blocks,GalaxeaVLA (G0),standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: cover_blocks,InternVLA-A1,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: cover_blocks,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: cover_blocks,pi0.5,standard,progress_percent,24.6,,,
+OpenWAM v1,Table 7 p26,ARX X5: cover_blocks,pi0.5,standard,success_rate_percent,20,,,
+OpenWAM v1,Table 7 p26,ARX X5: cover_blocks,OpenWAM-alpha,standard,progress_percent,31,,,
+OpenWAM v1,Table 7 p26,ARX X5: cover_blocks,OpenWAM-alpha,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_bread,X-VLA,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_bread,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_bread,Xiaomi-Robotics-0,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_bread,Xiaomi-Robotics-0,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_bread,GalaxeaVLA (G0),standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_bread,GalaxeaVLA (G0),standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_bread,InternVLA-A1,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_bread,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_bread,pi0.5,standard,progress_percent,1.8,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_bread,pi0.5,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_bread,OpenWAM-alpha,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_bread,OpenWAM-alpha,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_food,X-VLA,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_food,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_food,Xiaomi-Robotics-0,standard,progress_percent,3,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_food,Xiaomi-Robotics-0,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_food,GalaxeaVLA (G0),standard,progress_percent,3,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_food,GalaxeaVLA (G0),standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_food,InternVLA-A1,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_food,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_food,pi0.5,standard,progress_percent,25.8,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_food,pi0.5,standard,success_rate_percent,10,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_food,OpenWAM-alpha,standard,progress_percent,13,,,
+OpenWAM v1,Table 7 p26,ARX X5: make_food,OpenWAM-alpha,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: pack_and_pour_fruit,X-VLA,standard,progress_percent,2,,,
+OpenWAM v1,Table 7 p26,ARX X5: pack_and_pour_fruit,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: pack_and_pour_fruit,Xiaomi-Robotics-0,standard,progress_percent,4,,,
+OpenWAM v1,Table 7 p26,ARX X5: pack_and_pour_fruit,Xiaomi-Robotics-0,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: pack_and_pour_fruit,GalaxeaVLA (G0),standard,progress_percent,6,,,
+OpenWAM v1,Table 7 p26,ARX X5: pack_and_pour_fruit,GalaxeaVLA (G0),standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: pack_and_pour_fruit,InternVLA-A1,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: pack_and_pour_fruit,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: pack_and_pour_fruit,pi0.5,standard,progress_percent,47,,,
+OpenWAM v1,Table 7 p26,ARX X5: pack_and_pour_fruit,pi0.5,standard,success_rate_percent,20,,,
+OpenWAM v1,Table 7 p26,ARX X5: pack_and_pour_fruit,OpenWAM-alpha,standard,progress_percent,52,,,
+OpenWAM v1,Table 7 p26,ARX X5: pack_and_pour_fruit,OpenWAM-alpha,standard,success_rate_percent,20,,,
+OpenWAM v1,Table 7 p26,ARX X5: store_in_safe,X-VLA,standard,progress_percent,20.7,,,
+OpenWAM v1,Table 7 p26,ARX X5: store_in_safe,X-VLA,standard,success_rate_percent,10,,,
+OpenWAM v1,Table 7 p26,ARX X5: store_in_safe,Xiaomi-Robotics-0,standard,progress_percent,40,,,
+OpenWAM v1,Table 7 p26,ARX X5: store_in_safe,Xiaomi-Robotics-0,standard,success_rate_percent,20,,,
+OpenWAM v1,Table 7 p26,ARX X5: store_in_safe,GalaxeaVLA (G0),standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: store_in_safe,GalaxeaVLA (G0),standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: store_in_safe,InternVLA-A1,standard,progress_percent,48,,,
+OpenWAM v1,Table 7 p26,ARX X5: store_in_safe,InternVLA-A1,standard,success_rate_percent,20,,,
+OpenWAM v1,Table 7 p26,ARX X5: store_in_safe,pi0.5,standard,progress_percent,40,,,
+OpenWAM v1,Table 7 p26,ARX X5: store_in_safe,pi0.5,standard,success_rate_percent,20,,,
+OpenWAM v1,Table 7 p26,ARX X5: store_in_safe,OpenWAM-alpha,standard,progress_percent,100,,,
+OpenWAM v1,Table 7 p26,ARX X5: store_in_safe,OpenWAM-alpha,standard,success_rate_percent,100,,,
+OpenWAM v1,Table 7 p26,ARX X5: insert_tubes,X-VLA,standard,progress_percent,18,,,
+OpenWAM v1,Table 7 p26,ARX X5: insert_tubes,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: insert_tubes,Xiaomi-Robotics-0,standard,progress_percent,19,,,
+OpenWAM v1,Table 7 p26,ARX X5: insert_tubes,Xiaomi-Robotics-0,standard,success_rate_percent,10,,,
+OpenWAM v1,Table 7 p26,ARX X5: insert_tubes,GalaxeaVLA (G0),standard,progress_percent,10.3,,,
+OpenWAM v1,Table 7 p26,ARX X5: insert_tubes,GalaxeaVLA (G0),standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: insert_tubes,InternVLA-A1,standard,progress_percent,12,,,
+OpenWAM v1,Table 7 p26,ARX X5: insert_tubes,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,ARX X5: insert_tubes,pi0.5,standard,progress_percent,26.8,,,
+OpenWAM v1,Table 7 p26,ARX X5: insert_tubes,pi0.5,standard,success_rate_percent,10,,,
+OpenWAM v1,Table 7 p26,ARX X5: insert_tubes,OpenWAM-alpha,standard,progress_percent,38,,,
+OpenWAM v1,Table 7 p26,ARX X5: insert_tubes,OpenWAM-alpha,standard,success_rate_percent,20,,,
+OpenWAM v1,Table 7 p26,Piper: stack_and_cover_blocks,X-VLA,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: stack_and_cover_blocks,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: stack_and_cover_blocks,Xiaomi-Robotics-0,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: stack_and_cover_blocks,Xiaomi-Robotics-0,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: stack_and_cover_blocks,GalaxeaVLA (G0),standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: stack_and_cover_blocks,GalaxeaVLA (G0),standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: stack_and_cover_blocks,InternVLA-A1,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: stack_and_cover_blocks,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: stack_and_cover_blocks,pi0.5,standard,progress_percent,10,,,
+OpenWAM v1,Table 7 p26,Piper: stack_and_cover_blocks,pi0.5,standard,success_rate_percent,10,,,
+OpenWAM v1,Table 7 p26,Piper: stack_and_cover_blocks,OpenWAM-alpha,standard,progress_percent,8.3,,,
+OpenWAM v1,Table 7 p26,Piper: stack_and_cover_blocks,OpenWAM-alpha,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: fill_pen_holder,X-VLA,standard,progress_percent,5.3,,,
+OpenWAM v1,Table 7 p26,Piper: fill_pen_holder,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: fill_pen_holder,Xiaomi-Robotics-0,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: fill_pen_holder,Xiaomi-Robotics-0,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: fill_pen_holder,GalaxeaVLA (G0),standard,progress_percent,32.7,,,
+OpenWAM v1,Table 7 p26,Piper: fill_pen_holder,GalaxeaVLA (G0),standard,success_rate_percent,10,,,
+OpenWAM v1,Table 7 p26,Piper: fill_pen_holder,InternVLA-A1,standard,progress_percent,7.3,,,
+OpenWAM v1,Table 7 p26,Piper: fill_pen_holder,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: fill_pen_holder,pi0.5,standard,progress_percent,28,,,
+OpenWAM v1,Table 7 p26,Piper: fill_pen_holder,pi0.5,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: fill_pen_holder,OpenWAM-alpha,standard,progress_percent,60,,,
+OpenWAM v1,Table 7 p26,Piper: fill_pen_holder,OpenWAM-alpha,standard,success_rate_percent,40,,,
+OpenWAM v1,Table 7 p26,Piper: put_objects_into_basket,X-VLA,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: put_objects_into_basket,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: put_objects_into_basket,Xiaomi-Robotics-0,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: put_objects_into_basket,Xiaomi-Robotics-0,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: put_objects_into_basket,GalaxeaVLA (G0),standard,progress_percent,13.3,,,
+OpenWAM v1,Table 7 p26,Piper: put_objects_into_basket,GalaxeaVLA (G0),standard,success_rate_percent,10,,,
+OpenWAM v1,Table 7 p26,Piper: put_objects_into_basket,InternVLA-A1,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: put_objects_into_basket,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: put_objects_into_basket,pi0.5,standard,progress_percent,10,,,
+OpenWAM v1,Table 7 p26,Piper: put_objects_into_basket,pi0.5,standard,success_rate_percent,10,,,
+OpenWAM v1,Table 7 p26,Piper: put_objects_into_basket,OpenWAM-alpha,standard,progress_percent,36.7,,,
+OpenWAM v1,Table 7 p26,Piper: put_objects_into_basket,OpenWAM-alpha,standard,success_rate_percent,30,,,
+OpenWAM v1,Table 7 p26,Piper: insert_charger,X-VLA,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: insert_charger,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: insert_charger,Xiaomi-Robotics-0,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: insert_charger,Xiaomi-Robotics-0,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: insert_charger,GalaxeaVLA (G0),standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: insert_charger,GalaxeaVLA (G0),standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: insert_charger,InternVLA-A1,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: insert_charger,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: insert_charger,pi0.5,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: insert_charger,pi0.5,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: insert_charger,OpenWAM-alpha,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: insert_charger,OpenWAM-alpha,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: stack_bowls,X-VLA,standard,progress_percent,53,,,
+OpenWAM v1,Table 7 p26,Piper: stack_bowls,X-VLA,standard,success_rate_percent,50,,,
+OpenWAM v1,Table 7 p26,Piper: stack_bowls,Xiaomi-Robotics-0,standard,progress_percent,23,,,
+OpenWAM v1,Table 7 p26,Piper: stack_bowls,Xiaomi-Robotics-0,standard,success_rate_percent,20,,,
+OpenWAM v1,Table 7 p26,Piper: stack_bowls,GalaxeaVLA (G0),standard,progress_percent,56,,,
+OpenWAM v1,Table 7 p26,Piper: stack_bowls,GalaxeaVLA (G0),standard,success_rate_percent,50,,,
+OpenWAM v1,Table 7 p26,Piper: stack_bowls,InternVLA-A1,standard,progress_percent,73,,,
+OpenWAM v1,Table 7 p26,Piper: stack_bowls,InternVLA-A1,standard,success_rate_percent,70,,,
+OpenWAM v1,Table 7 p26,Piper: stack_bowls,pi0.5,standard,progress_percent,72,,,
+OpenWAM v1,Table 7 p26,Piper: stack_bowls,pi0.5,standard,success_rate_percent,60,,,
+OpenWAM v1,Table 7 p26,Piper: stack_bowls,OpenWAM-alpha,standard,progress_percent,100,,,
+OpenWAM v1,Table 7 p26,Piper: stack_bowls,OpenWAM-alpha,standard,success_rate_percent,100,,,
+OpenWAM v1,Table 7 p26,Piper: stand_up_bottles,X-VLA,standard,progress_percent,37,,,
+OpenWAM v1,Table 7 p26,Piper: stand_up_bottles,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: stand_up_bottles,Xiaomi-Robotics-0,standard,progress_percent,22.7,,,
+OpenWAM v1,Table 7 p26,Piper: stand_up_bottles,Xiaomi-Robotics-0,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper: stand_up_bottles,GalaxeaVLA (G0),standard,progress_percent,30,,,
+OpenWAM v1,Table 7 p26,Piper: stand_up_bottles,GalaxeaVLA (G0),standard,success_rate_percent,10,,,
+OpenWAM v1,Table 7 p26,Piper: stand_up_bottles,InternVLA-A1,standard,progress_percent,59,,,
+OpenWAM v1,Table 7 p26,Piper: stand_up_bottles,InternVLA-A1,standard,success_rate_percent,40,,,
+OpenWAM v1,Table 7 p26,Piper: stand_up_bottles,pi0.5,standard,progress_percent,72,,,
+OpenWAM v1,Table 7 p26,Piper: stand_up_bottles,pi0.5,standard,success_rate_percent,50,,,
+OpenWAM v1,Table 7 p26,Piper: stand_up_bottles,OpenWAM-alpha,standard,progress_percent,75,,,
+OpenWAM v1,Table 7 p26,Piper: stand_up_bottles,OpenWAM-alpha,standard,success_rate_percent,50,,,
+OpenWAM v1,Table 7 p26,Piper X: classify_objects,X-VLA,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: classify_objects,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: classify_objects,Xiaomi-Robotics-0,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: classify_objects,Xiaomi-Robotics-0,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: classify_objects,GalaxeaVLA (G0),standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: classify_objects,GalaxeaVLA (G0),standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: classify_objects,InternVLA-A1,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: classify_objects,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: classify_objects,pi0.5,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: classify_objects,pi0.5,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: classify_objects,OpenWAM-alpha,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: classify_objects,OpenWAM-alpha,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: disassemble_LEGO,X-VLA,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: disassemble_LEGO,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: disassemble_LEGO,Xiaomi-Robotics-0,standard,progress_percent,0.7,,,
+OpenWAM v1,Table 7 p26,Piper X: disassemble_LEGO,Xiaomi-Robotics-0,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: disassemble_LEGO,GalaxeaVLA (G0),standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: disassemble_LEGO,GalaxeaVLA (G0),standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: disassemble_LEGO,InternVLA-A1,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: disassemble_LEGO,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: disassemble_LEGO,pi0.5,standard,progress_percent,14.8,,,
+OpenWAM v1,Table 7 p26,Piper X: disassemble_LEGO,pi0.5,standard,success_rate_percent,10,,,
+OpenWAM v1,Table 7 p26,Piper X: disassemble_LEGO,OpenWAM-alpha,standard,progress_percent,28,,,
+OpenWAM v1,Table 7 p26,Piper X: disassemble_LEGO,OpenWAM-alpha,standard,success_rate_percent,10,,,
+OpenWAM v1,Table 7 p26,Piper X: hang_mugs,X-VLA,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: hang_mugs,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: hang_mugs,Xiaomi-Robotics-0,standard,progress_percent,4,,,
+OpenWAM v1,Table 7 p26,Piper X: hang_mugs,Xiaomi-Robotics-0,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: hang_mugs,GalaxeaVLA (G0),standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: hang_mugs,GalaxeaVLA (G0),standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: hang_mugs,InternVLA-A1,standard,progress_percent,4,,,
+OpenWAM v1,Table 7 p26,Piper X: hang_mugs,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: hang_mugs,pi0.5,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: hang_mugs,pi0.5,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: hang_mugs,OpenWAM-alpha,standard,progress_percent,18,,,
+OpenWAM v1,Table 7 p26,Piper X: hang_mugs,OpenWAM-alpha,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: pack_objects_into_backpack,X-VLA,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: pack_objects_into_backpack,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: pack_objects_into_backpack,Xiaomi-Robotics-0,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: pack_objects_into_backpack,Xiaomi-Robotics-0,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: pack_objects_into_backpack,GalaxeaVLA (G0),standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: pack_objects_into_backpack,GalaxeaVLA (G0),standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: pack_objects_into_backpack,InternVLA-A1,standard,progress_percent,2,,,
+OpenWAM v1,Table 7 p26,Piper X: pack_objects_into_backpack,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: pack_objects_into_backpack,pi0.5,standard,progress_percent,29.5,,,
+OpenWAM v1,Table 7 p26,Piper X: pack_objects_into_backpack,pi0.5,standard,success_rate_percent,10,,,
+OpenWAM v1,Table 7 p26,Piper X: pack_objects_into_backpack,OpenWAM-alpha,standard,progress_percent,52.3,,,
+OpenWAM v1,Table 7 p26,Piper X: pack_objects_into_backpack,OpenWAM-alpha,standard,success_rate_percent,20,,,
+OpenWAM v1,Table 7 p26,Piper X: sweep_blocks,X-VLA,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: sweep_blocks,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: sweep_blocks,Xiaomi-Robotics-0,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: sweep_blocks,Xiaomi-Robotics-0,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: sweep_blocks,GalaxeaVLA (G0),standard,progress_percent,4,,,
+OpenWAM v1,Table 7 p26,Piper X: sweep_blocks,GalaxeaVLA (G0),standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: sweep_blocks,InternVLA-A1,standard,progress_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: sweep_blocks,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: sweep_blocks,pi0.5,standard,progress_percent,7.5,,,
+OpenWAM v1,Table 7 p26,Piper X: sweep_blocks,pi0.5,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: sweep_blocks,OpenWAM-alpha,standard,progress_percent,40,,,
+OpenWAM v1,Table 7 p26,Piper X: sweep_blocks,OpenWAM-alpha,standard,success_rate_percent,40,,,
+OpenWAM v1,Table 7 p26,Piper X: cap_pen,X-VLA,standard,progress_percent,0.7,,,
+OpenWAM v1,Table 7 p26,Piper X: cap_pen,X-VLA,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: cap_pen,Xiaomi-Robotics-0,standard,progress_percent,2.7,,,
+OpenWAM v1,Table 7 p26,Piper X: cap_pen,Xiaomi-Robotics-0,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: cap_pen,GalaxeaVLA (G0),standard,progress_percent,6,,,
+OpenWAM v1,Table 7 p26,Piper X: cap_pen,GalaxeaVLA (G0),standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: cap_pen,InternVLA-A1,standard,progress_percent,10,,,
+OpenWAM v1,Table 7 p26,Piper X: cap_pen,InternVLA-A1,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: cap_pen,pi0.5,standard,progress_percent,3,,,
+OpenWAM v1,Table 7 p26,Piper X: cap_pen,pi0.5,standard,success_rate_percent,0,,,
+OpenWAM v1,Table 7 p26,Piper X: cap_pen,OpenWAM-alpha,standard,progress_percent,24.7,,,
+OpenWAM v1,Table 7 p26,Piper X: cap_pen,OpenWAM-alpha,standard,success_rate_percent,10,,,
+OpenWAM v1,Table 7 p26,Overall average,X-VLA,standard,progress_percent,7.6,,,reported overall average
+OpenWAM v1,Table 7 p26,Overall average,X-VLA,standard,success_rate_percent,3.3,,,reported overall average
+OpenWAM v1,Table 7 p26,Overall average,Xiaomi-Robotics-0,standard,progress_percent,7.9,,,reported overall average
+OpenWAM v1,Table 7 p26,Overall average,Xiaomi-Robotics-0,standard,success_rate_percent,3.9,,,reported overall average
+OpenWAM v1,Table 7 p26,Overall average,GalaxeaVLA (G0),standard,progress_percent,9,,,reported overall average
+OpenWAM v1,Table 7 p26,Overall average,GalaxeaVLA (G0),standard,success_rate_percent,4.4,,,reported overall average
+OpenWAM v1,Table 7 p26,Overall average,InternVLA-A1,standard,progress_percent,12,,,reported overall average
+OpenWAM v1,Table 7 p26,Overall average,InternVLA-A1,standard,success_rate_percent,7.2,,,reported overall average
+OpenWAM v1,Table 7 p26,Overall average,pi0.5,standard,progress_percent,22.9,,,reported overall average
+OpenWAM v1,Table 7 p26,Overall average,pi0.5,standard,success_rate_percent,12.8,,,reported overall average
+OpenWAM v1,Table 7 p26,Overall average,OpenWAM-alpha,standard,progress_percent,37.6,,,reported overall average
+OpenWAM v1,Table 7 p26,Overall average,OpenWAM-alpha,standard,success_rate_percent,24.4,,,reported overall average
+Efficient-WAM v3,Table 2 p8,Pipette-tray grasping,pi0.5,standard,success_rate_percent,100,20,20,
+Efficient-WAM v3,Table 2 p8,Reagent-bottle transfer,pi0.5,standard,success_rate_percent,75,20,15,
+Efficient-WAM v3,Table 2 p8,LEGO color sorting,pi0.5,standard,success_rate_percent,30,20,6,
+Efficient-WAM v3,Table 2 p8,Pen uncapping,pi0.5,standard,success_rate_percent,10,20,2,
+Efficient-WAM v3,Table 2 p8,Towel folding,pi0.5,standard,success_rate_percent,85,20,17,
+Efficient-WAM v3,Table 2 p8,Average,pi0.5,standard,success_rate_percent,60.0,100,60,
+Efficient-WAM v3,Table 2 p8,Pipette-tray grasping,Motus,standard,success_rate_percent,85,20,17,
+Efficient-WAM v3,Table 2 p8,Reagent-bottle transfer,Motus,standard,success_rate_percent,80,20,16,
+Efficient-WAM v3,Table 2 p8,LEGO color sorting,Motus,standard,success_rate_percent,65,20,13,
+Efficient-WAM v3,Table 2 p8,Pen uncapping,Motus,standard,success_rate_percent,25,20,5,
+Efficient-WAM v3,Table 2 p8,Towel folding,Motus,standard,success_rate_percent,65,20,13,
+Efficient-WAM v3,Table 2 p8,Average,Motus,standard,success_rate_percent,64.0,100,64,
+Efficient-WAM v3,Table 2 p8,Pipette-tray grasping,Efficient-WAM,standard,success_rate_percent,95,20,19,
+Efficient-WAM v3,Table 2 p8,Reagent-bottle transfer,Efficient-WAM,standard,success_rate_percent,75,20,15,
+Efficient-WAM v3,Table 2 p8,LEGO color sorting,Efficient-WAM,standard,success_rate_percent,65,20,13,
+Efficient-WAM v3,Table 2 p8,Pen uncapping,Efficient-WAM,standard,success_rate_percent,30,20,6,
+Efficient-WAM v3,Table 2 p8,Towel folding,Efficient-WAM,standard,success_rate_percent,60,20,12,
+Efficient-WAM v3,Table 2 p8,Average,Efficient-WAM,standard,success_rate_percent,65.0,100,65,
+Efficient-WAM v3,Table 2 p8,Latency,pi0.5,standard,chunk_latency_ms,113,,,RTX 4090
+Efficient-WAM v3,Table 2 p8,Latency,pi0.5,standard,amortized_action_latency_ms,7.1,,,chunk/16; RTX 4090
+Efficient-WAM v3,Table 2 p8,Latency,Motus,standard,chunk_latency_ms,3215,,,RTX 4090
+Efficient-WAM v3,Table 2 p8,Latency,Motus,standard,amortized_action_latency_ms,200.9,,,chunk/16; RTX 4090
+Efficient-WAM v3,Table 2 p8,Latency,Efficient-WAM,standard,chunk_latency_ms,98,,,RTX 4090
+Efficient-WAM v3,Table 2 p8,Latency,Efficient-WAM,standard,amortized_action_latency_ms,6.1,,,chunk/16; RTX 4090
+FlowWAM v1,Figure 3 p8,Franka: Stack Bowls,pi0.5,standard,success_rate_percent,80,10,8,labels printed on bars
+FlowWAM v1,Figure 3 p8,Franka: Place in Drawer,pi0.5,standard,success_rate_percent,70,10,7,labels printed on bars
+FlowWAM v1,Figure 3 p8,Franka: Put in Plate,pi0.5,standard,success_rate_percent,80,10,8,labels printed on bars
+FlowWAM v1,Figure 3 p8,Franka: Place Two Cups,pi0.5,standard,success_rate_percent,40,10,4,labels printed on bars
+FlowWAM v1,Figure 3 p8,ARX: Fold Towel,pi0.5,standard,success_rate_percent,40,10,4,labels printed on bars
+FlowWAM v1,Figure 3 p8,ARX: Stack Bowls II,pi0.5,standard,success_rate_percent,70,10,7,labels printed on bars
+FlowWAM v1,Figure 3 p8,ARX: Clean Plate,pi0.5,standard,success_rate_percent,50,10,5,labels printed on bars
+FlowWAM v1,Section 4.3 p8,Average,pi0.5,standard,success_rate_percent,61.4,70,43,
+FlowWAM v1,Figure 3 p8,Franka: Stack Bowls,Motus,standard,success_rate_percent,80,10,8,labels printed on bars
+FlowWAM v1,Figure 3 p8,Franka: Place in Drawer,Motus,standard,success_rate_percent,80,10,8,labels printed on bars
+FlowWAM v1,Figure 3 p8,Franka: Put in Plate,Motus,standard,success_rate_percent,80,10,8,labels printed on bars
+FlowWAM v1,Figure 3 p8,Franka: Place Two Cups,Motus,standard,success_rate_percent,30,10,3,labels printed on bars
+FlowWAM v1,Figure 3 p8,ARX: Fold Towel,Motus,standard,success_rate_percent,30,10,3,labels printed on bars
+FlowWAM v1,Figure 3 p8,ARX: Stack Bowls II,Motus,standard,success_rate_percent,70,10,7,labels printed on bars
+FlowWAM v1,Figure 3 p8,ARX: Clean Plate,Motus,standard,success_rate_percent,30,10,3,labels printed on bars
+FlowWAM v1,Section 4.3 p8,Average,Motus,standard,success_rate_percent,57.1,70,40,
+FlowWAM v1,Figure 3 p8,Franka: Stack Bowls,FlowWAM,standard,success_rate_percent,90,10,9,labels printed on bars
+FlowWAM v1,Figure 3 p8,Franka: Place in Drawer,FlowWAM,standard,success_rate_percent,90,10,9,labels printed on bars
+FlowWAM v1,Figure 3 p8,Franka: Put in Plate,FlowWAM,standard,success_rate_percent,100,10,10,labels printed on bars
+FlowWAM v1,Figure 3 p8,Franka: Place Two Cups,FlowWAM,standard,success_rate_percent,60,10,6,labels printed on bars
+FlowWAM v1,Figure 3 p8,ARX: Fold Towel,FlowWAM,standard,success_rate_percent,40,10,4,labels printed on bars
+FlowWAM v1,Figure 3 p8,ARX: Stack Bowls II,FlowWAM,standard,success_rate_percent,90,10,9,labels printed on bars
+FlowWAM v1,Figure 3 p8,ARX: Clean Plate,FlowWAM,standard,success_rate_percent,60,10,6,labels printed on bars
+FlowWAM v1,Section 4.3 p8,Average,FlowWAM,standard,success_rate_percent,75.7,70,53,
+WAM4D v3,Table 2 p8,Plate S1,pi0.5,standard,subaction_success_percent,100,10,10,
+WAM4D v3,Table 2 p8,Bottle S1,pi0.5,standard,subaction_success_percent,80.0,10,8,
+WAM4D v3,Table 2 p8,Blocks S1,pi0.5,standard,subaction_success_percent,70.0,10,7,
+WAM4D v3,Table 2 p8,Blocks S2,pi0.5,standard,subaction_success_percent,60.0,10,6,
+WAM4D v3,Table 2 p8,Blocks S3,pi0.5,standard,subaction_success_percent,50.0,10,5,
+WAM4D v3,Table 2 p8,Pen S1,pi0.5,standard,subaction_success_percent,80.0,10,8,
+WAM4D v3,Table 2 p8,Pen S2,pi0.5,standard,subaction_success_percent,80.0,10,8,
+WAM4D v3,Table 2 p8,Average,pi0.5,standard,subaction_success_percent,74,,,reported rounded mean across seven columns
+WAM4D v3,Table 2 p8,Plate S1,LingBot-VA,standard,subaction_success_percent,100,10,10,
+WAM4D v3,Table 2 p8,Bottle S1,LingBot-VA,standard,subaction_success_percent,100,10,10,
+WAM4D v3,Table 2 p8,Blocks S1,LingBot-VA,standard,subaction_success_percent,100,10,10,
+WAM4D v3,Table 2 p8,Blocks S2,LingBot-VA,standard,subaction_success_percent,70.0,10,7,
+WAM4D v3,Table 2 p8,Blocks S3,LingBot-VA,standard,subaction_success_percent,40.0,10,4,
+WAM4D v3,Table 2 p8,Pen S1,LingBot-VA,standard,subaction_success_percent,90.0,10,9,
+WAM4D v3,Table 2 p8,Pen S2,LingBot-VA,standard,subaction_success_percent,90.0,10,9,
+WAM4D v3,Table 2 p8,Average,LingBot-VA,standard,subaction_success_percent,84,,,reported rounded mean across seven columns
+WAM4D v3,Table 2 p8,Plate S1,Fast-WAM,standard,subaction_success_percent,90.0,10,9,
+WAM4D v3,Table 2 p8,Bottle S1,Fast-WAM,standard,subaction_success_percent,100,10,10,
+WAM4D v3,Table 2 p8,Blocks S1,Fast-WAM,standard,subaction_success_percent,80.0,10,8,
+WAM4D v3,Table 2 p8,Blocks S2,Fast-WAM,standard,subaction_success_percent,70.0,10,7,
+WAM4D v3,Table 2 p8,Blocks S3,Fast-WAM,standard,subaction_success_percent,50.0,10,5,
+WAM4D v3,Table 2 p8,Pen S1,Fast-WAM,standard,subaction_success_percent,90.0,10,9,
+WAM4D v3,Table 2 p8,Pen S2,Fast-WAM,standard,subaction_success_percent,80.0,10,8,
+WAM4D v3,Table 2 p8,Average,Fast-WAM,standard,subaction_success_percent,80,,,reported rounded mean across seven columns
+WAM4D v3,Table 2 p8,Plate S1,WAM4D,standard,subaction_success_percent,90.0,10,9,
+WAM4D v3,Table 2 p8,Bottle S1,WAM4D,standard,subaction_success_percent,90.0,10,9,
+WAM4D v3,Table 2 p8,Blocks S1,WAM4D,standard,subaction_success_percent,100,10,10,
+WAM4D v3,Table 2 p8,Blocks S2,WAM4D,standard,subaction_success_percent,90.0,10,9,
+WAM4D v3,Table 2 p8,Blocks S3,WAM4D,standard,subaction_success_percent,80.0,10,8,
+WAM4D v3,Table 2 p8,Pen S1,WAM4D,standard,subaction_success_percent,90.0,10,9,
+WAM4D v3,Table 2 p8,Pen S2,WAM4D,standard,subaction_success_percent,90.0,10,9,
+WAM4D v3,Table 2 p8,Average,WAM4D,standard,subaction_success_percent,90,,,reported rounded mean across seven columns
+Track4Action v1,Figure 4 p7,Chilies into plate,pi0.5,standard,success_rate_percent,70,10,7,
+Track4Action v1,Figure 4 p7,Pens in drawer and close,pi0.5,standard,success_rate_percent,60,10,6,
+Track4Action v1,Figure 4 p7,Fold towel,pi0.5,standard,success_rate_percent,70,10,7,
+Track4Action v1,Figure 4 p7,Cabbage into pot and close,pi0.5,standard,success_rate_percent,60,10,6,
+Track4Action v1,Figure 4 p7,Average,pi0.5,standard,success_rate_percent,65.0,40,26,DreamZero mean computed from bars; other means also reported in text
+Track4Action v1,Figure 4 p7,Chilies into plate,DreamZero,standard,success_rate_percent,40,10,4,
+Track4Action v1,Figure 4 p7,Pens in drawer and close,DreamZero,standard,success_rate_percent,40,10,4,
+Track4Action v1,Figure 4 p7,Fold towel,DreamZero,standard,success_rate_percent,30,10,3,
+Track4Action v1,Figure 4 p7,Cabbage into pot and close,DreamZero,standard,success_rate_percent,10,10,1,
+Track4Action v1,Figure 4 p7,Average,DreamZero,standard,success_rate_percent,30.0,40,12,DreamZero mean computed from bars; other means also reported in text
+Track4Action v1,Figure 4 p7,Chilies into plate,Track4Action w/o align,standard,success_rate_percent,60,10,6,
+Track4Action v1,Figure 4 p7,Pens in drawer and close,Track4Action w/o align,standard,success_rate_percent,50,10,5,
+Track4Action v1,Figure 4 p7,Fold towel,Track4Action w/o align,standard,success_rate_percent,20,10,2,
+Track4Action v1,Figure 4 p7,Cabbage into pot and close,Track4Action w/o align,standard,success_rate_percent,40,10,4,
+Track4Action v1,Figure 4 p7,Average,Track4Action w/o align,standard,success_rate_percent,42.5,40,17,DreamZero mean computed from bars; other means also reported in text
+Track4Action v1,Figure 4 p7,Chilies into plate,Track4Action,standard,success_rate_percent,80,10,8,
+Track4Action v1,Figure 4 p7,Pens in drawer and close,Track4Action,standard,success_rate_percent,80,10,8,
+Track4Action v1,Figure 4 p7,Fold towel,Track4Action,standard,success_rate_percent,40,10,4,
+Track4Action v1,Figure 4 p7,Cabbage into pot and close,Track4Action,standard,success_rate_percent,70,10,7,
+Track4Action v1,Figure 4 p7,Average,Track4Action,standard,success_rate_percent,67.5,40,27,DreamZero mean computed from bars; other means also reported in text
+Track4Action v1,Figure 5 p7,Chilies into plate,pi0.5,standard,progress_score_out_of_100,80,,,
+Track4Action v1,Figure 5 p7,Pens in drawer and close,pi0.5,standard,progress_score_out_of_100,80,,,
+Track4Action v1,Figure 5 p7,Fold towel,pi0.5,standard,progress_score_out_of_100,60,,,
+Track4Action v1,Figure 5 p7,Cabbage into pot and close,pi0.5,standard,progress_score_out_of_100,80,,,
+Track4Action v1,Figure 5 p7,Chilies into plate,DreamZero,standard,progress_score_out_of_100,42.5,,,
+Track4Action v1,Figure 5 p7,Pens in drawer and close,DreamZero,standard,progress_score_out_of_100,47.5,,,
+Track4Action v1,Figure 5 p7,Fold towel,DreamZero,standard,progress_score_out_of_100,40,,,
+Track4Action v1,Figure 5 p7,Cabbage into pot and close,DreamZero,standard,progress_score_out_of_100,30,,,
+Track4Action v1,Figure 5 p7,Chilies into plate,Track4Action w/o align,standard,progress_score_out_of_100,70,,,
+Track4Action v1,Figure 5 p7,Pens in drawer and close,Track4Action w/o align,standard,progress_score_out_of_100,67.5,,,
+Track4Action v1,Figure 5 p7,Fold towel,Track4Action w/o align,standard,progress_score_out_of_100,40,,,
+Track4Action v1,Figure 5 p7,Cabbage into pot and close,Track4Action w/o align,standard,progress_score_out_of_100,65,,,
+Track4Action v1,Figure 5 p7,Chilies into plate,Track4Action,standard,progress_score_out_of_100,85,,,
+Track4Action v1,Figure 5 p7,Pens in drawer and close,Track4Action,standard,progress_score_out_of_100,92.5,,,
+Track4Action v1,Figure 5 p7,Fold towel,Track4Action,standard,progress_score_out_of_100,47.5,,,
+Track4Action v1,Figure 5 p7,Cabbage into pot and close,Track4Action,standard,progress_score_out_of_100,75,,,
+Track4Action v1,Figure 3 p6,Chilies: unseen layout / distractors,Track4Action w/o align,OOD,success_rate_percent,30,,,trial count not separately stated for OOD figure
+Track4Action v1,Figure 3 p6,Chilies: unseen layout / distractors,Track4Action,OOD,success_rate_percent,60,,,trial count not separately stated for OOD figure
+Track4Action v1,Figure 3 p6,Towel: red to green,Track4Action w/o align,OOD,success_rate_percent,10,,,trial count not separately stated for OOD figure
+Track4Action v1,Figure 3 p6,Towel: red to green,Track4Action,OOD,success_rate_percent,20,,,trial count not separately stated for OOD figure
+Track4Action v1,Figure 3 p6,Cabbage: textured background,Track4Action w/o align,OOD,success_rate_percent,30,,,trial count not separately stated for OOD figure
+Track4Action v1,Figure 3 p6,Cabbage: textured background,Track4Action,OOD,success_rate_percent,70,,,trial count not separately stated for OOD figure
+Fast-WAM v2,Figure 4 p9,Fold towel,pi0.5,standard,success_rate_percent,100,,,read from scatterplot; no-video 10% also stated in text
+Fast-WAM v2,Figure 4 p9,Fold towel,pi0.5,standard,completion_time_s,120,,,approximate visual coordinate reading
+Fast-WAM v2,Figure 4 p9,Latency,pi0.5,standard,chunk_latency_ms,180,,,printed bar label; RTX5090D V2
+Fast-WAM v2,Figure 4 p9,Fold towel,pi0.5 w/o pretrain,standard,success_rate_percent,40,,,read from scatterplot; no-video 10% also stated in text
+Fast-WAM v2,Figure 4 p9,Fold towel,pi0.5 w/o pretrain,standard,completion_time_s,205,,,approximate visual coordinate reading
+Fast-WAM v2,Figure 4 p9,Fold towel,Fast-WAM,standard,success_rate_percent,75,,,read from scatterplot; no-video 10% also stated in text
+Fast-WAM v2,Figure 4 p9,Fold towel,Fast-WAM,standard,completion_time_s,150,,,approximate visual coordinate reading
+Fast-WAM v2,Figure 4 p9,Latency,Fast-WAM,standard,chunk_latency_ms,190,,,printed bar label; RTX5090D V2
+Fast-WAM v2,Figure 4 p9,Fold towel,Fast-WAM Joint,standard,success_rate_percent,70,,,read from scatterplot; no-video 10% also stated in text
+Fast-WAM v2,Figure 4 p9,Fold towel,Fast-WAM Joint,standard,completion_time_s,225,,,approximate visual coordinate reading
+Fast-WAM v2,Figure 4 p9,Latency,Fast-WAM Joint,standard,chunk_latency_ms,580,,,printed bar label; RTX5090D V2
+Fast-WAM v2,Figure 4 p9,Fold towel,Fast-WAM IDM,standard,success_rate_percent,90,,,read from scatterplot; no-video 10% also stated in text
+Fast-WAM v2,Figure 4 p9,Fold towel,Fast-WAM IDM,standard,completion_time_s,175,,,approximate visual coordinate reading
+Fast-WAM v2,Figure 4 p9,Latency,Fast-WAM IDM,standard,chunk_latency_ms,810,,,printed bar label; RTX5090D V2
+Fast-WAM v2,Figure 4 p9,Fold towel,Fast-WAM w/o video cotrain,standard,success_rate_percent,10,,,read from scatterplot; no-video 10% also stated in text
+Fast-WAM v2,Figure 4 p9,Fold towel,Fast-WAM w/o video cotrain,standard,completion_time_s,240,,,approximate visual coordinate reading
+Fast-WAM v2,Figure 4 p9,Latency,Fast-WAM w/o video cotrain,standard,chunk_latency_ms,190,,,printed bar label; RTX5090D V2

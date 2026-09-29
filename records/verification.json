@@ -1,0 +1,56 @@
+{
+  "date": "2026-09-29",
+  "official_template_commit": "291758547e923160eb4d37079b7b9f0dfce82355",
+  "official_template_files_identical": 15,
+  "clean_project": {
+    "url": "https://www.overleaf.com/project/6abb6f3ddbd37a2e4165260d",
+    "commit": "d47f451e06b64d3711d23fb076fe926391444a89",
+    "counts": {
+      "added": 15,
+      "modified": 1,
+      "deleted": 0
+    }
+  },
+  "metis_project": {
+    "url": "https://www.overleaf.com/project/6abb715e006aea59b1989d4d",
+    "commit": "62ffd001ea243332887e0eeda21bba135dbf188b",
+    "counts": {
+      "added": 6,
+      "modified": 4,
+      "deleted": 10
+    }
+  },
+  "cloud_pdfs": [
+    {
+      "name": "cvpr-clean",
+      "bytes": 216914,
+      "pages": 5,
+      "sha256": "1310027398ad36ddc831c94da2de5374cf2e695ea5c845e59eada08a0f244645",
+      "overleaf_errors": 0,
+      "overleaf_warnings": 0,
+      "rendered_all_pages": true,
+      "visual_review": "passed"
+    },
+    {
+      "name": "metis-real",
+      "bytes": 246417,
+      "pages": 4,
+      "sha256": "205e57f3366faae440b25ae1beaaa3005a5985c97949a357babbe633fc4a81b3",
+      "overleaf_errors": 0,
+      "overleaf_warnings": 0,
+      "rendered_all_pages": true,
+      "visual_review": "passed"
+    }
+  ],
+  "private_code_files_published": 0,
+  "real_robot_repository_changes": {
+    "added": 0,
+    "modified": 0,
+    "deleted": 0
+  },
+  "existing_overleaf_projects_changes": {
+    "added": 0,
+    "modified": 0,
+    "deleted": 0
+  }
+}

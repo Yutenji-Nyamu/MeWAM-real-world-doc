@@ -1,0 +1,11 @@
+\usepackage[UTF8,fontset=fandol,scheme=plain]{ctex}
+\usepackage{graphicx,booktabs,tabularx,array,multirow}
+\usepackage{cuted,caption}
+\captionsetup{hypcap=false}
+\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+\usepackage[breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+\newcommand{\pending}{\textcolor{cvprblue}{待补}}
+\newcommand{\blankresult}{\textemdash}
+\newcommand{\panel}[2]{\fbox{\parbox[c][#1][c]{0.93\linewidth}{\centering\small #2}}}
+\setlength{\emergencystretch}{1em}

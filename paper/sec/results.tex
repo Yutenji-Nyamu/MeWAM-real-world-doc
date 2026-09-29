@@ -1,0 +1,30 @@
+\section{结果与展示材料}
+\begin{strip}
+\centering
+\input{tables/real_results}
+\end{strip}
+
+\subsection{正文论述的填空顺序}
+\paragraph{总体表现。}填写 ID 及三类 OOD 的各任务成功率，随后报告任务平均值与相对两个基线的百分点差。每项平均值沿用同一组任务和同一权重。
+
+\paragraph{外观变化。}分别比较桌布、物体外观、干扰物三列，并记录相对于 ID 的变化。结论围绕实际改善的条件展开，附代表性成功和失败片段。
+
+\paragraph{精细操作。}对照普通放置与插接、抽屉边界操作的提升量。补充主要失败原因，如抓取偏差、边界碰撞、对齐失败、目标混淆和超时。
+
+\subsection{结果记录字段}
+每次试验保存任务、方法、checkpoint、条件、初始化编号、开始／结束时间、成功标记、结束原因与录像路径。成功率由逐次记录汇总；表格保留成功数和总次数，完成时间可在附录单独补充。
+
+\begin{figure}[htbp]
+\centering
+\panel{28mm}{OOD 场景占位\\ID \quad 桌布 \quad 物体外观 \quad 干扰物\\同一任务、同一相机、相近初始位置}
+\caption{条件对照图占位。每列标注实际改变的因素与道具编号。}
+\end{figure}
+
+\subsection{机制与视频材料}
+实机执行录像用于展示策略完成任务的过程。若展示模型内部预测，再补充预测 RGB、预测轨迹与实际执行的对应片段；分支训练方式、预测步长和采样配置随图记录。
+
+\begin{figure}[htbp]
+\centering
+\panel{31mm}{可选机制图占位\\当前 RGB／深度／mask\\预测 RGB／Track\\真实执行关键帧}
+\caption{几何和运动表示展示占位。参考 FlowWAM Figure 9 的预测与执行并排结构。}
+\end{figure}

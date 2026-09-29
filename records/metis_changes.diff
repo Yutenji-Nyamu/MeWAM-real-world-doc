@@ -1,0 +1,2633 @@
+diff --git a/.github/workflows/latex-build.yml b/.github/workflows/latex-build.yml
+deleted file mode 100644
+index b6993e5..0000000
+--- a/.github/workflows/latex-build.yml
++++ /dev/null
+@@ -1,39 +0,0 @@
+-name: LaTeX Build
+-
+-on:
+-  push:
+-    branches: [ main ]
+-  pull_request:
+-    branches: [ main ]
+-
+-jobs:
+-  build:
+-    runs-on: ubuntu-latest
+-
+-    steps:
+-    - uses: actions/checkout@v4
+-
+-    - name: Compile LaTeX document
+-      uses: xu-cheng/latex-action@v3
+-      with:
+-        root_file: main.tex
+-
+-    - name: Check for LaTeX errors and warnings
+-      run: |
+-        if grep -q "^!" main.log; then
+-          echo "LaTeX errors found:"
+-          grep "^!" main.log
+-          exit 1
+-        elif grep -q "Warning:" main.log; then
+-          echo "LaTeX warnings found:"
+-          grep "Warning:" main.log
+-          echo "Build completed with warnings."
+-        else
+-          echo "LaTeX build completed successfully without errors or warnings."
+-        fi
+-
+-    - name: Upload PDF
+-      uses: actions/upload-artifact@v4
+-      with:
+-        name: main.pdf
+-        path: main.pdf
+\ No newline at end of file
+diff --git a/README.md b/README.md
+index cd28671..d1e546d 100644
+--- a/README.md
++++ b/README.md
+@@ -1,22 +1,14 @@
+-# Official LaTeX template for CVPR/ICCV/3DV 
++# MetisWAM4D real world
+ 
+-**Note:** as per PC decision, the Microsoft Word version of the template is no longer supported.
+-You may find the 2024 version [here](https://github.com/cvpr-org/author-kit/releases/tag/CVPR2024-v3(msword)).
++仅做整理信息用，非正式论文段落。
+ 
+-### History (in reverse chronological order)
++- Overleaf: https://www.overleaf.com/project/6abb715e006aea59b1989d4d
++- Discussion and evidence: https://github.com/Yutenji-Nyamu/MetisWAM4D-real-world-doc
++- Compiler: XeLaTeX; TeX Live 2026; main document: main.tex.
++- Main text: sec/real_world.tex and sec/results.tex.
++- Main results: tables/real_results.tex (four tasks × three methods; ID plus three OOD conditions).
++- Appendix: sec/appendix_protocol.tex, sec/appendix_data.tex, tables/task_criteria.tex.
++- All measurements and fixture-dependent criteria are placeholders.
++- Current trial budget wording: 20 trials per task/method, 120 seconds; allocation across conditions remains to be specified.
+ 
+-- updated for CVPR 2026 [Vladimir Pavlovic](mailto:vladimir@rutgers.edu)
+-- added styles for `subsubsection` and fixed the wrong PDF bookmarks by [Di Fang](https://github.com/fang-d)
+-- modernized for CVPR 2025 by [Christian Richardt](https://richardt.name/)
+-- fixed page centering for CVPR 2025 by [Stefan Roth](mailto:stefan.roth@NOSPAMtu-darmstadt.de)
+-- inline enumerations and `cvprblue` links for CVPR 2025 by [Ioannis Gkioulekas
+-](https://www.cs.cmu.edu/~igkioule/)
+-- added automated LaTeX build testing for CVPR 2025 by [Ahan Shabanov](https://ahanio.github.io)
+-- references in `cvprblue` for CVPR 2024 by [Klaus Greff](https://github.com/Qwlouse) 
+-- added natbib for CVPR 2024 by [Christian Richardt](https://richardt.name/)
+-- replaced buggy (review-mode) line numbering for 3DV 2024 by [Adín Ramírez Rivera
+-](https://openreview.net/profile?id=~Ad%C3%ADn_Ram%C3%ADrez_Rivera1)
+-- setup github repo of author-kit for 3DV 2025 by [Andrea Tagliasacchi](https://theialab.ca)
+-- modernized for CVPR 2022 by [Stefan Roth](mailto:stefan.roth@NOSPAMtu-darmstadt.de)
+-- created cvpr.sty file to unify review/rebuttal/final versions by [Ming-Ming Cheng](https://github.com/MCG-NKU/CVPR_Template)
+-- developed CVPR 2005 template  by [Paolo Ienne](mailto:Paolo.Ienne@di.epfl.ch) and [Andrew Fitzgibbon](mailto:awf@acm.org)
++The project was copied from the clean CVPR project. The currently published official kit remains labeled CVPR 2026; see TEMPLATE_STATUS.md for provenance. This document targets CVPR 2027 preparation.
+diff --git a/TEMPLATE_STATUS.md b/TEMPLATE_STATUS.md
+index b56d418..6282dd0 100644
+--- a/TEMPLATE_STATUS.md
++++ b/TEMPLATE_STATUS.md
+@@ -4,7 +4,9 @@ Prepared on 2026-09-29 for CVPR 2027 planning.
+ 
+ - Official source: https://github.com/cvpr-org/author-kit
+ - Upstream commit: `291758547e923160eb4d37079b7b9f0dfce82355`.
+-- The current upstream template declares CVPR 2026; all upstream files are preserved byte for byte.
++- The current upstream template declares CVPR 2026. The clean source project preserves all 15 upstream tracked files byte for byte.
+ - The CVPR 2027 Author Guidelines URL returned “Page not found” on the check date.
+ - Project title identifies the intended conference; this source snapshot follows the current official kit.
+-- This clean project preserves the complete template. The separate “MetisWAM4D real world” project contains the experiment information framework.
++- This derivative was created through Overleaf “Make a copy” from https://www.overleaf.com/project/6abb6f3ddbd37a2e4165260d .
++- The derivative replaces the template example text with the requested real-world experiment framework and removes unrelated sample sections and assets. `cvpr.sty` remains byte-identical to the official source.
++- This discussion document uses XeLaTeX for Chinese notes. Main file: `main.tex`.
+diff --git a/fig/teaser.tex b/fig/teaser.tex
+deleted file mode 100644
+index 0b97ad9..0000000
+--- a/fig/teaser.tex
++++ /dev/null
+@@ -1,10 +0,0 @@
+-\begin{strip}
+-\centering
+-\includegraphics[width=.33\linewidth]{example-image-golden}\hfill
+-\includegraphics[width=.33\linewidth]{example-image-golden}\hfill
+-\includegraphics[width=.33\linewidth]{example-image-golden}
+-\captionsetup{hypcap=false}
+-\captionof{figure}{\textbf{Teaser} -- example of a 2-column teaser. This figure appears at the top of the first page, and a two-column teaser is not mandatory.}
+-\captionsetup{hypcap=true}
+-\label{fig:\currfilebase}%
+-\end{strip}
+\ No newline at end of file
+diff --git a/ieeenat_fullname.bst b/ieeenat_fullname.bst
+deleted file mode 100644
+index 261b8c3..0000000
+--- a/ieeenat_fullname.bst
++++ /dev/null
+@@ -1,1448 +0,0 @@
+-%% File: `abbrvnat.bst'
+-%% A modification of `abbrv.bst' for use with natbib package 
+-%%
+-%% Copyright 1993-2007 Patrick W Daly
+-%% Max-Planck-Institut f\"ur Sonnensystemforschung
+-%% Max-Planck-Str. 2
+-%% D-37191 Katlenburg-Lindau
+-%% Germany
+-%% E-mail: daly@mps.mpg.de
+-%%
+-%% This program can be redistributed and/or modified under the terms
+-%% of the LaTeX Project Public License Distributed from CTAN
+-%% archives in directory macros/latex/base/lppl.txt; either
+-%% version 1 of the License, or any later version.
+-%%
+- % Version and source file information:
+- % \ProvidesFile{natbst.mbs}[2007/11/26 1.93 (PWD)]
+- %
+- % BibTeX `plainnat' family
+- %   version 0.99b for BibTeX versions 0.99a or later,
+- %   for LaTeX versions 2.09 and 2e.
+- %
+- % For use with the `natbib.sty' package; emulates the corresponding
+- %   member of the `plain' family, but with author-year citations.
+- %
+- % With version 6.0 of `natbib.sty', it may also be used for numerical
+- %   citations, while retaining the commands \citeauthor, \citefullauthor,
+- %   and \citeyear to print the corresponding information.
+- %
+- % For version 7.0 of `natbib.sty', the KEY field replaces missing
+- %   authors/editors, and the date is left blank in \bibitem.
+- %
+- % Includes field EID for the sequence/citation number of electronic journals
+- %  which is used instead of page numbers.
+- %
+- % Includes fields ISBN and ISSN.
+- %
+- % Includes field URL for Internet addresses.
+- %
+- % Includes field DOI for Digital Object Idenfifiers.
+- %
+- % Works best with the url.sty package of Donald Arseneau.
+- %
+- % Works with identical authors and year are further sorted by
+- %   citation key, to preserve any natural sequence.
+- %
+-ENTRY
+-  { address
+-    author
+-    booktitle
+-    chapter
+-    doi
+-    eid
+-    edition
+-    editor
+-    howpublished
+-    institution
+-    isbn
+-    issn
+-    journal
+-    key
+-    month
+-    note
+-    number
+-    organization
+-    pages
+-    publisher
+-    school
+-    series
+-    title
+-    type
+-    url
+-    volume
+-    year
+-  }
+-  {}
+-  { label extra.label sort.label short.list }
+-
+-INTEGERS { output.state before.all mid.sentence after.sentence after.block }
+-
+-FUNCTION {init.state.consts}
+-{ #0 'before.all :=
+-  #1 'mid.sentence :=
+-  #2 'after.sentence :=
+-  #3 'after.block :=
+-}
+-
+-STRINGS { s t }
+-
+-FUNCTION {output.nonnull}
+-{ 's :=
+-  output.state mid.sentence =
+-    { ", " * write$ }
+-    { output.state after.block =
+-        { add.period$ write$
+-          newline$
+-          "\newblock " write$
+-        }
+-        { output.state before.all =
+-            'write$
+-            { add.period$ " " * write$ }
+-          if$
+-        }
+-      if$
+-      mid.sentence 'output.state :=
+-    }
+-  if$
+-  s
+-}
+-
+-FUNCTION {output}
+-{ duplicate$ empty$
+-    'pop$
+-    'output.nonnull
+-  if$
+-}
+-
+-FUNCTION {output.check}
+-{ 't :=
+-  duplicate$ empty$
+-    { pop$ "empty " t * " in " * cite$ * warning$ }
+-    'output.nonnull
+-  if$
+-}
+-
+-FUNCTION {fin.entry}
+-{ add.period$
+-  write$
+-  newline$
+-}
+-
+-FUNCTION {new.block}
+-{ output.state before.all =
+-    'skip$
+-    { after.block 'output.state := }
+-  if$
+-}
+-
+-FUNCTION {new.sentence}
+-{ output.state after.block =
+-    'skip$
+-    { output.state before.all =
+-        'skip$
+-        { after.sentence 'output.state := }
+-      if$
+-    }
+-  if$
+-}
+-
+-FUNCTION {not}
+-{   { #0 }
+-    { #1 }
+-  if$
+-}
+-
+-FUNCTION {and}
+-{   'skip$
+-    { pop$ #0 }
+-  if$
+-}
+-
+-FUNCTION {or}
+-{   { pop$ #1 }
+-    'skip$
+-  if$
+-}
+-
+-FUNCTION {new.block.checka}
+-{ empty$
+-    'skip$
+-    'new.block
+-  if$
+-}
+-
+-FUNCTION {new.block.checkb}
+-{ empty$
+-  swap$ empty$
+-  and
+-    'skip$
+-    'new.block
+-  if$
+-}
+-
+-FUNCTION {new.sentence.checka}
+-{ empty$
+-    'skip$
+-    'new.sentence
+-  if$
+-}
+-
+-FUNCTION {new.sentence.checkb}
+-{ empty$
+-  swap$ empty$
+-  and
+-    'skip$
+-    'new.sentence
+-  if$
+-}
+-
+-FUNCTION {field.or.null}
+-{ duplicate$ empty$
+-    { pop$ "" }
+-    'skip$
+-  if$
+-}
+-
+-FUNCTION {emphasize}
+-{ duplicate$ empty$
+-    { pop$ "" }
+-    { "\emph{" swap$ * "}" * }
+-  if$
+-}
+-
+-INTEGERS { nameptr namesleft numnames }
+-
+-FUNCTION {format.names}
+-{ 's :=
+-  #1 'nameptr :=
+-  s num.names$ 'numnames :=
+-  numnames 'namesleft :=
+-    { namesleft #0 > }
+-    % Formerly { s nameptr "{f.~}{vv~}{ll}{, jj}" format.name$ 't :=
+-    { s nameptr "{ff }{vv }{ll}{, jj}" format.name$ 't :=
+-      nameptr #1 >
+-        { namesleft #1 >
+-            { ", " * t * }
+-            { numnames #2 >
+-                { "," * }
+-                'skip$
+-              if$
+-              t "others" =
+-                { " et~al." * }
+-                { " and " * t * }
+-              if$
+-            }
+-          if$
+-        }
+-        't
+-      if$
+-      nameptr #1 + 'nameptr :=
+-      namesleft #1 - 'namesleft :=
+-    }
+-  while$
+-}
+-
+-FUNCTION {format.key}
+-{ empty$
+-    { key field.or.null }
+-    { "" }
+-  if$
+-}
+-
+-FUNCTION {format.authors}
+-{ author empty$
+-    { "" }
+-    { author format.names }
+-  if$
+-}
+-
+-FUNCTION {format.editors}
+-{ editor empty$
+-    { "" }
+-    { editor format.names
+-      editor num.names$ #1 >
+-        { ", editors" * }
+-        { ", editor" * }
+-      if$
+-    }
+-  if$
+-}
+-
+-FUNCTION {format.isbn}
+-{ isbn empty$
+-    { "" }
+-%    { new.block "ISBN " isbn * }
+-    { "" }
+-  if$
+-}
+-
+-FUNCTION {format.issn}
+-{ issn empty$
+-    { "" }
+-%    { new.block "ISSN " issn * }
+-    { "" }
+-  if$
+-}
+-
+-FUNCTION {format.url}
+-{ url empty$
+-    { "" }
+-%    { new.block "URL \url{" url * "}" * }
+-    { "" }
+-  if$
+-}
+-
+-FUNCTION {format.doi}
+-{ doi empty$
+-    { "" }
+-%    { new.block "\doi{" doi * "}" * }
+-    { "" }
+-  if$
+-}
+-
+-FUNCTION {format.title}
+-{ title empty$
+-    { "" }
+-    { title "t" change.case$ }
+-  if$
+-}
+-
+-FUNCTION {format.full.names}
+-{'s :=
+-  #1 'nameptr :=
+-  s num.names$ 'numnames :=
+-  numnames 'namesleft :=
+-    { namesleft #0 > }
+-    { s nameptr
+-      "{vv~}{ll}" format.name$ 't :=
+-      nameptr #1 >
+-        {
+-          namesleft #1 >
+-            { ", " * t * }
+-            {
+-              numnames #2 >
+-                { "," * }
+-                'skip$
+-              if$
+-              t "others" =
+-                { " et~al." * }
+-                { " and " * t * }
+-              if$
+-            }
+-          if$
+-        }
+-        't
+-      if$
+-      nameptr #1 + 'nameptr :=
+-      namesleft #1 - 'namesleft :=
+-    }
+-  while$
+-}
+-
+-FUNCTION {author.editor.full}
+-{ author empty$
+-    { editor empty$
+-        { "" }
+-        { editor format.full.names }
+-      if$
+-    }
+-    { author format.full.names }
+-  if$
+-}
+-
+-FUNCTION {author.full}
+-{ author empty$
+-    { "" }
+-    { author format.full.names }
+-  if$
+-}
+-
+-FUNCTION {editor.full}
+-{ editor empty$
+-    { "" }
+-    { editor format.full.names }
+-  if$
+-}
+-
+-FUNCTION {make.full.names}
+-{ type$ "book" =
+-  type$ "inbook" =
+-  or
+-    'author.editor.full
+-    { type$ "proceedings" =
+-        'editor.full
+-        'author.full
+-      if$
+-    }
+-  if$
+-}
+-
+-FUNCTION {output.bibitem}
+-{ newline$
+-  "\bibitem[" write$
+-  label write$
+-  ")" make.full.names duplicate$ short.list =
+-     { pop$ }
+-     { * }
+-   if$
+-  "]{" * write$
+-  cite$ write$
+-  "}" write$
+-  newline$
+-  ""
+-  before.all 'output.state :=
+-}
+-
+-FUNCTION {n.dashify}
+-{ 't :=
+-  ""
+-    { t empty$ not }
+-    { t #1 #1 substring$ "-" =
+-        { t #1 #2 substring$ "--" = not
+-            { "--" *
+-              t #2 global.max$ substring$ 't :=
+-            }
+-            {   { t #1 #1 substring$ "-" = }
+-                { "-" *
+-                  t #2 global.max$ substring$ 't :=
+-                }
+-              while$
+-            }
+-          if$
+-        }
+-        { t #1 #1 substring$ *
+-          t #2 global.max$ substring$ 't :=
+-        }
+-      if$
+-    }
+-  while$
+-}
+-
+-FUNCTION {format.date}
+-{ year duplicate$ empty$
+-    { "empty year in " cite$ * warning$
+-       pop$ "" }
+-    'skip$
+-  if$
+-%% CR: Leave out months.
+-%  month empty$
+-%    'skip$
+-%    { month
+-%      " " * swap$ *
+-%    }
+-%  if$
+-  extra.label *
+-}
+-
+-FUNCTION {format.btitle}
+-{ title emphasize
+-}
+-
+-FUNCTION {tie.or.space.connect}
+-{ duplicate$ text.length$ #3 <
+-    { "~" }
+-    { " " }
+-  if$
+-  swap$ * *
+-}
+-
+-FUNCTION {either.or.check}
+-{ empty$
+-    'pop$
+-    { "can't use both " swap$ * " fields in " * cite$ * warning$ }
+-  if$
+-}
+-
+-FUNCTION {format.bvolume}
+-{ volume empty$
+-    { "" }
+-%% CR: Don't show "volume 1234 of LNCS" etc.
+-%    { "volume" volume tie.or.space.connect
+-%      series empty$
+-%        'skip$
+-%        { " of " * series emphasize * }
+-%      if$
+-%      "volume and number" number either.or.check
+-%    }
+-    { "" }
+-  if$
+-}
+-
+-FUNCTION {format.number.series}
+-{ volume empty$
+-    { number empty$
+-%% CR: Leave out series information.
+-%        { series field.or.null }
+-        { "" }
+-        { output.state mid.sentence =
+-            { "number" }
+-            { "Number" }
+-          if$
+-          number tie.or.space.connect
+-          series empty$
+-            { "there's a number but no series in " cite$ * warning$ }
+-            { " in " * series * }
+-          if$
+-        }
+-      if$
+-    }
+-    { "" }
+-  if$
+-}
+-
+-FUNCTION {format.edition}
+-{ edition empty$
+-    { "" }
+-    { output.state mid.sentence =
+-        { edition "l" change.case$ " edition" * }
+-        { edition "t" change.case$ " edition" * }
+-      if$
+-    }
+-  if$
+-}
+-
+-INTEGERS { multiresult }
+-
+-FUNCTION {multi.page.check}
+-{ 't :=
+-  #0 'multiresult :=
+-    { multiresult not
+-      t empty$ not
+-      and
+-    }
+-    { t #1 #1 substring$
+-      duplicate$ "-" =
+-      swap$ duplicate$ "," =
+-      swap$ "+" =
+-      or or
+-        { #1 'multiresult := }
+-        { t #2 global.max$ substring$ 't := }
+-      if$
+-    }
+-  while$
+-  multiresult
+-}
+-
+-FUNCTION {format.pages}
+-{ pages empty$
+-    { "" }
+-    { pages multi.page.check
+-        { "pages" pages n.dashify tie.or.space.connect }
+-        { "page" pages tie.or.space.connect }
+-      if$
+-    }
+-  if$
+-}
+-
+-FUNCTION {format.eid}
+-{ eid empty$
+-    { "" }
+-    { "art." eid tie.or.space.connect }
+-  if$
+-}
+-
+-FUNCTION {format.vol.num.pages}
+-{ volume field.or.null
+-  number empty$
+-    'skip$
+-    { "\penalty0 (" number * ")" * *
+-      volume empty$
+-        { "there's a number but no volume in " cite$ * warning$ }
+-        'skip$
+-      if$
+-    }
+-  if$
+-  pages empty$
+-    'skip$
+-    { duplicate$ empty$
+-        { pop$ format.pages }
+-        { ":\penalty0 " * pages n.dashify * }
+-      if$
+-    }
+-  if$
+-}
+-
+-FUNCTION {format.vol.num.eid}
+-{ volume field.or.null
+-  number empty$
+-    'skip$
+-    { "\penalty0 (" number * ")" * *
+-      volume empty$
+-        { "there's a number but no volume in " cite$ * warning$ }
+-        'skip$
+-      if$
+-    }
+-  if$
+-  eid empty$
+-    'skip$
+-    { duplicate$ empty$
+-        { pop$ format.eid }
+-        { ":\penalty0 " * eid * }
+-      if$
+-    }
+-  if$
+-}
+-
+-FUNCTION {format.chapter.pages}
+-{ chapter empty$
+-    'format.pages
+-    { type empty$
+-        { "chapter" }
+-        { type "l" change.case$ }
+-      if$
+-      chapter tie.or.space.connect
+-      pages empty$
+-        'skip$
+-        { ", " * format.pages * }
+-      if$
+-    }
+-  if$
+-}
+-
+-FUNCTION {format.in.ed.booktitle}
+-{ booktitle empty$
+-    { "" }
+-%% CR: Leave out editors even if the information is available.
+-%    { editor empty$
+-%        { "In " booktitle emphasize * }
+-%        { "In " format.editors * ", " * booktitle emphasize * }
+-%      if$
+-%    }
+-    { "In " booktitle emphasize * }
+-  if$
+-}
+-
+-FUNCTION {empty.misc.check}
+-{ author empty$ title empty$ howpublished empty$
+-  month empty$ year empty$ note empty$
+-  and and and and and
+-  key empty$ not and
+-    { "all relevant fields are empty in " cite$ * warning$ }
+-    'skip$
+-  if$
+-}
+-
+-FUNCTION {format.thesis.type}
+-{ type empty$
+-    'skip$
+-    { pop$
+-      type "t" change.case$
+-    }
+-  if$
+-}
+-
+-FUNCTION {format.tr.number}
+-{ type empty$
+-    { "Technical Report" }
+-    'type
+-  if$
+-  number empty$
+-    { "t" change.case$ }
+-    { number tie.or.space.connect }
+-  if$
+-}
+-
+-FUNCTION {format.article.crossref}
+-{ key empty$
+-    { journal empty$
+-        { "need key or journal for " cite$ * " to crossref " * crossref *
+-          warning$
+-          ""
+-        }
+-        { "In \emph{" journal * "}" * }
+-      if$
+-    }
+-    { "In " }
+-  if$
+-  " \citet{" * crossref * "}" *
+-}
+-
+-FUNCTION {format.book.crossref}
+-{ volume empty$
+-    { "empty volume in " cite$ * "'s crossref of " * crossref * warning$
+-      "In "
+-    }
+-    { "Volume" volume tie.or.space.connect
+-      " of " *
+-    }
+-  if$
+-  editor empty$
+-  editor field.or.null author field.or.null =
+-  or
+-    { key empty$
+-        { series empty$
+-            { "need editor, key, or series for " cite$ * " to crossref " *
+-              crossref * warning$
+-              "" *
+-            }
+-            { "\emph{" * series * "}" * }
+-          if$
+-        }
+-        'skip$
+-      if$
+-    }
+-    'skip$
+-  if$
+-  " \citet{" * crossref * "}" *
+-}
+-
+-FUNCTION {format.incoll.inproc.crossref}
+-{ editor empty$
+-  editor field.or.null author field.or.null =
+-  or
+-    { key empty$
+-        { booktitle empty$
+-            { "need editor, key, or booktitle for " cite$ * " to crossref " *
+-              crossref * warning$
+-              ""
+-            }
+-            { "In \emph{" booktitle * "}" * }
+-          if$
+-        }
+-        { "In " }
+-      if$
+-    }
+-    { "In " }
+-  if$
+-  " \citet{" * crossref * "}" *
+-}
+-
+-FUNCTION {article}
+-{ output.bibitem
+-  format.authors "author" output.check
+-  author format.key output
+-  new.block
+-  format.title "title" output.check
+-  new.block
+-  crossref missing$
+-    { journal emphasize "journal" output.check
+-      eid empty$
+-        { format.vol.num.pages output }
+-        { format.vol.num.eid output }
+-      if$
+-      format.date "year" output.check
+-    }
+-    { format.article.crossref output.nonnull
+-      eid empty$
+-        { format.pages output }
+-        { format.eid output }
+-      if$
+-    }
+-  if$
+-  format.issn output
+-  format.doi output
+-  format.url output
+-  new.block
+-  note output
+-  fin.entry
+-}
+-
+-FUNCTION {book}
+-{ output.bibitem
+-  author empty$
+-    { format.editors "author and editor" output.check
+-      editor format.key output
+-    }
+-    { format.authors output.nonnull
+-      crossref missing$
+-        { "author and editor" editor either.or.check }
+-        'skip$
+-      if$
+-    }
+-  if$
+-  new.block
+-  format.btitle "title" output.check
+-  crossref missing$
+-    { format.bvolume output
+-      new.block
+-      format.number.series output
+-      new.sentence
+-      publisher "publisher" output.check
+-      address output
+-    }
+-    { new.block
+-      format.book.crossref output.nonnull
+-    }
+-  if$
+-  format.edition output
+-  format.date "year" output.check
+-  format.isbn output
+-  format.doi output
+-  format.url output
+-  new.block
+-  note output
+-  fin.entry
+-}
+-
+-FUNCTION {booklet}
+-{ output.bibitem
+-  format.authors output
+-  author format.key output
+-  new.block
+-  format.title "title" output.check
+-  howpublished address new.block.checkb
+-  howpublished output
+-  address output
+-  format.date output
+-  format.isbn output
+-  format.doi output
+-  format.url output
+-  new.block
+-  note output
+-  fin.entry
+-}
+-
+-FUNCTION {inbook}
+-{ output.bibitem
+-  author empty$
+-    { format.editors "author and editor" output.check
+-      editor format.key output
+-    }
+-    { format.authors output.nonnull
+-      crossref missing$
+-        { "author and editor" editor either.or.check }
+-        'skip$
+-      if$
+-    }
+-  if$
+-  new.block
+-  format.btitle "title" output.check
+-  crossref missing$
+-    { format.bvolume output
+-      format.chapter.pages "chapter and pages" output.check
+-      new.block
+-      format.number.series output
+-      new.sentence
+-      publisher "publisher" output.check
+-      address output
+-    }
+-    { format.chapter.pages "chapter and pages" output.check
+-      new.block
+-      format.book.crossref output.nonnull
+-    }
+-  if$
+-  format.edition output
+-  format.date "year" output.check
+-  format.isbn output
+-  format.doi output
+-  format.url output
+-  new.block
+-  note output
+-  fin.entry
+-}
+-
+-FUNCTION {incollection}
+-{ output.bibitem
+-  format.authors "author" output.check
+-  author format.key output
+-  new.block
+-  format.title "title" output.check
+-  new.block
+-  crossref missing$
+-    { format.in.ed.booktitle "booktitle" output.check
+-      format.bvolume output
+-      format.number.series output
+-      format.chapter.pages output
+-      new.sentence
+-      publisher "publisher" output.check
+-      address output
+-      format.edition output
+-      format.date "year" output.check
+-    }
+-    { format.incoll.inproc.crossref output.nonnull
+-      format.chapter.pages output
+-    }
+-  if$
+-  format.isbn output
+-  format.doi output
+-  format.url output
+-  new.block
+-  note output
+-  fin.entry
+-}
+-
+-FUNCTION {inproceedings}
+-{ output.bibitem
+-  format.authors "author" output.check
+-  author format.key output
+-  new.block
+-  format.title "title" output.check
+-  new.block
+-  crossref missing$
+-    { format.in.ed.booktitle "booktitle" output.check
+-      format.bvolume output
+-      format.number.series output
+-      format.pages output
+-      address empty$
+-        { organization publisher new.sentence.checkb
+-          organization output
+-          publisher output
+-          format.date "year" output.check
+-        }
+-        { address output.nonnull
+-          format.date "year" output.check
+-          new.sentence
+-          organization output
+-          publisher output
+-        }
+-      if$
+-    }
+-    { format.incoll.inproc.crossref output.nonnull
+-      format.pages output
+-    }
+-  if$
+-  format.isbn output
+-  format.doi output
+-  format.url output
+-  new.block
+-  note output
+-  fin.entry
+-}
+-
+-FUNCTION {conference} { inproceedings }
+-
+-FUNCTION {manual}
+-{ output.bibitem
+-  format.authors output
+-  author format.key output
+-  new.block
+-  format.btitle "title" output.check
+-  organization address new.block.checkb
+-  organization output
+-  address output
+-  format.edition output
+-  format.date output
+-  format.url output
+-  new.block
+-  note output
+-  fin.entry
+-}
+-
+-FUNCTION {mastersthesis}
+-{ output.bibitem
+-  format.authors "author" output.check
+-  author format.key output
+-  new.block
+-  format.title "title" output.check
+-  new.block
+-  "Master's thesis" format.thesis.type output.nonnull
+-  school "school" output.check
+-  address output
+-  format.date "year" output.check
+-  format.url output
+-  new.block
+-  note output
+-  fin.entry
+-}
+-
+-FUNCTION {misc}
+-{ output.bibitem
+-  format.authors output
+-  author format.key output
+-  title howpublished new.block.checkb
+-  format.title output
+-  howpublished new.block.checka
+-  howpublished output
+-  format.date output
+-  format.issn output
+-  format.url output
+-  new.block
+-  note output
+-  fin.entry
+-  empty.misc.check
+-}
+-
+-FUNCTION {phdthesis}
+-{ output.bibitem
+-  format.authors "author" output.check
+-  author format.key output
+-  new.block
+-  format.btitle "title" output.check
+-  new.block
+-  "PhD thesis" format.thesis.type output.nonnull
+-  school "school" output.check
+-  address output
+-  format.date "year" output.check
+-  format.url output
+-  new.block
+-  note output
+-  fin.entry
+-}
+-
+-FUNCTION {proceedings}
+-{ output.bibitem
+-  format.editors output
+-  editor format.key output
+-  new.block
+-  format.btitle "title" output.check
+-  format.bvolume output
+-  format.number.series output
+-  address output
+-  format.date "year" output.check
+-  new.sentence
+-  organization output
+-  publisher output
+-  format.isbn output
+-  format.doi output
+-  format.url output
+-  new.block
+-  note output
+-  fin.entry
+-}
+-
+-FUNCTION {techreport}
+-{ output.bibitem
+-  format.authors "author" output.check
+-  author format.key output
+-  new.block
+-  format.title "title" output.check
+-  new.block
+-  format.tr.number output.nonnull
+-  institution "institution" output.check
+-  address output
+-  format.date "year" output.check
+-  format.url output
+-  new.block
+-  note output
+-  fin.entry
+-}
+-
+-FUNCTION {unpublished}
+-{ output.bibitem
+-  format.authors "author" output.check
+-  author format.key output
+-  new.block
+-  format.title "title" output.check
+-  new.block
+-  note "note" output.check
+-  format.date output
+-  format.url output
+-  fin.entry
+-}
+-
+-FUNCTION {default.type} { misc }
+-
+-
+-MACRO {jan} {"Jan."}
+-
+-MACRO {feb} {"Feb."}
+-
+-MACRO {mar} {"Mar."}
+-
+-MACRO {apr} {"Apr."}
+-
+-MACRO {may} {"May"}
+-
+-MACRO {jun} {"June"}
+-
+-MACRO {jul} {"July"}
+-
+-MACRO {aug} {"Aug."}
+-
+-MACRO {sep} {"Sept."}
+-
+-MACRO {oct} {"Oct."}
+-
+-MACRO {nov} {"Nov."}
+-
+-MACRO {dec} {"Dec."}
+-
+-
+-
+-MACRO {acmcs} {"ACM Comput. Surv."}
+-
+-MACRO {acta} {"Acta Inf."}
+-
+-MACRO {cacm} {"Commun. ACM"}
+-
+-MACRO {ibmjrd} {"IBM J. Res. Dev."}
+-
+-MACRO {ibmsj} {"IBM Syst.~J."}
+-
+-MACRO {ieeese} {"IEEE Trans. Softw. Eng."}
+-
+-MACRO {ieeetc} {"IEEE Trans. Comput."}
+-
+-MACRO {ieeetcad}
+- {"IEEE Trans. Comput.-Aided Design Integrated Circuits"}
+-
+-MACRO {ipl} {"Inf. Process. Lett."}
+-
+-MACRO {jacm} {"J.~ACM"}
+-
+-MACRO {jcss} {"J.~Comput. Syst. Sci."}
+-
+-MACRO {scp} {"Sci. Comput. Programming"}
+-
+-MACRO {sicomp} {"SIAM J. Comput."}
+-
+-MACRO {tocs} {"ACM Trans. Comput. Syst."}
+-
+-MACRO {tods} {"ACM Trans. Database Syst."}
+-
+-MACRO {tog} {"ACM Trans. Gr."}
+-
+-MACRO {toms} {"ACM Trans. Math. Softw."}
+-
+-MACRO {toois} {"ACM Trans. Office Inf. Syst."}
+-
+-MACRO {toplas} {"ACM Trans. Prog. Lang. Syst."}
+-
+-MACRO {tcs} {"Theoretical Comput. Sci."}
+-
+-
+-READ
+-
+-FUNCTION {sortify}
+-{ purify$
+-  "l" change.case$
+-}
+-
+-INTEGERS { len }
+-
+-FUNCTION {chop.word}
+-{ 's :=
+-  'len :=
+-  s #1 len substring$ =
+-    { s len #1 + global.max$ substring$ }
+-    's
+-  if$
+-}
+-
+-FUNCTION {format.lab.names}
+-{ 's :=
+-  s #1 "{vv~}{ll}" format.name$
+-  s num.names$ duplicate$
+-  #2 >
+-    { pop$ " et~al." * }
+-    { #2 <
+-        'skip$
+-        { s #2 "{ff }{vv }{ll}{ jj}" format.name$ "others" =
+-            { " et~al." * }
+-            { " and " * s #2 "{vv~}{ll}" format.name$ * }
+-          if$
+-        }
+-      if$
+-    }
+-  if$
+-}
+-
+-FUNCTION {author.key.label}
+-{ author empty$
+-    { key empty$
+-        { cite$ #1 #3 substring$ }
+-        'key
+-      if$
+-    }
+-    { author format.lab.names }
+-  if$
+-}
+-
+-FUNCTION {author.editor.key.label}
+-{ author empty$
+-    { editor empty$
+-        { key empty$
+-            { cite$ #1 #3 substring$ }
+-            'key
+-          if$
+-        }
+-        { editor format.lab.names }
+-      if$
+-    }
+-    { author format.lab.names }
+-  if$
+-}
+-
+-FUNCTION {author.key.organization.label}
+-{ author empty$
+-    { key empty$
+-        { organization empty$
+-            { cite$ #1 #3 substring$ }
+-            { "The " #4 organization chop.word #3 text.prefix$ }
+-          if$
+-        }
+-        'key
+-      if$
+-    }
+-    { author format.lab.names }
+-  if$
+-}
+-
+-FUNCTION {editor.key.organization.label}
+-{ editor empty$
+-    { key empty$
+-        { organization empty$
+-            { cite$ #1 #3 substring$ }
+-            { "The " #4 organization chop.word #3 text.prefix$ }
+-          if$
+-        }
+-        'key
+-      if$
+-    }
+-    { editor format.lab.names }
+-  if$
+-}
+-
+-FUNCTION {calc.short.authors}
+-{ type$ "book" =
+-  type$ "inbook" =
+-  or
+-    'author.editor.key.label
+-    { type$ "proceedings" =
+-        'editor.key.organization.label
+-        { type$ "manual" =
+-            'author.key.organization.label
+-            'author.key.label
+-          if$
+-        }
+-      if$
+-    }
+-  if$
+-  'short.list :=
+-}
+-
+-FUNCTION {calc.label}
+-{ calc.short.authors
+-  short.list
+-  "("
+-  *
+-  year duplicate$ empty$
+-  short.list key field.or.null = or
+-     { pop$ "" }
+-     'skip$
+-  if$
+-  *
+-  'label :=
+-}
+-
+-FUNCTION {sort.format.names}
+-{ 's :=
+-  #1 'nameptr :=
+-  ""
+-  s num.names$ 'numnames :=
+-  numnames 'namesleft :=
+-    { namesleft #0 > }
+-    {
+-      s nameptr "{vv{ } }{ll{ }}{  f{ }}{  jj{ }}" format.name$ 't :=
+-      nameptr #1 >
+-        {
+-          "   "  *
+-          namesleft #1 = t "others" = and
+-            { "zzzzz" * }
+-            { numnames #2 > nameptr #2 = and
+-                { "zz" * year field.or.null * "   " * }
+-                'skip$
+-              if$
+-              t sortify *
+-            }
+-          if$
+-        }
+-        { t sortify * }
+-      if$
+-      nameptr #1 + 'nameptr :=
+-      namesleft #1 - 'namesleft :=
+-    }
+-  while$
+-}
+-
+-FUNCTION {sort.format.title}
+-{ 't :=
+-  "A " #2
+-    "An " #3
+-      "The " #4 t chop.word
+-    chop.word
+-  chop.word
+-  sortify
+-  #1 global.max$ substring$
+-}
+-
+-FUNCTION {author.sort}
+-{ author empty$
+-    { key empty$
+-        { "to sort, need author or key in " cite$ * warning$
+-          ""
+-        }
+-        { key sortify }
+-      if$
+-    }
+-    { author sort.format.names }
+-  if$
+-}
+-
+-FUNCTION {author.editor.sort}
+-{ author empty$
+-    { editor empty$
+-        { key empty$
+-            { "to sort, need author, editor, or key in " cite$ * warning$
+-              ""
+-            }
+-            { key sortify }
+-          if$
+-        }
+-        { editor sort.format.names }
+-      if$
+-    }
+-    { author sort.format.names }
+-  if$
+-}
+-
+-FUNCTION {author.organization.sort}
+-{ author empty$
+-    { organization empty$
+-        { key empty$
+-            { "to sort, need author, organization, or key in " cite$ * warning$
+-              ""
+-            }
+-            { key sortify }
+-          if$
+-        }
+-        { "The " #4 organization chop.word sortify }
+-      if$
+-    }
+-    { author sort.format.names }
+-  if$
+-}
+-
+-FUNCTION {editor.organization.sort}
+-{ editor empty$
+-    { organization empty$
+-        { key empty$
+-            { "to sort, need editor, organization, or key in " cite$ * warning$
+-              ""
+-            }
+-            { key sortify }
+-          if$
+-        }
+-        { "The " #4 organization chop.word sortify }
+-      if$
+-    }
+-    { editor sort.format.names }
+-  if$
+-}
+-
+-
+-FUNCTION {presort}
+-{ calc.label
+-  label sortify
+-  "    "
+-  *
+-  type$ "book" =
+-  type$ "inbook" =
+-  or
+-    'author.editor.sort
+-    { type$ "proceedings" =
+-        'editor.organization.sort
+-        { type$ "manual" =
+-            'author.organization.sort
+-            'author.sort
+-          if$
+-        }
+-      if$
+-    }
+-  if$
+-  "    "
+-  *
+-  year field.or.null sortify
+-  *
+-  "    "
+-  *
+-  cite$
+-  *
+-  #1 entry.max$ substring$
+-  'sort.label :=
+-  sort.label *
+-  #1 entry.max$ substring$
+-  'sort.key$ :=
+-}
+-
+-ITERATE {presort}
+-
+-SORT
+-
+-STRINGS { longest.label last.label next.extra }
+-
+-INTEGERS { longest.label.width last.extra.num number.label }
+-
+-FUNCTION {initialize.longest.label}
+-{ "" 'longest.label :=
+-  #0 int.to.chr$ 'last.label :=
+-  "" 'next.extra :=
+-  #0 'longest.label.width :=
+-  #0 'last.extra.num :=
+-  #0 'number.label :=
+-}
+-
+-FUNCTION {forward.pass}
+-{ last.label label =
+-    { last.extra.num #1 + 'last.extra.num :=
+-      last.extra.num int.to.chr$ 'extra.label :=
+-    }
+-    { "a" chr.to.int$ 'last.extra.num :=
+-      "" 'extra.label :=
+-      label 'last.label :=
+-    }
+-  if$
+-  number.label #1 + 'number.label :=
+-}
+-
+-FUNCTION {reverse.pass}
+-{ next.extra "b" =
+-    { "a" 'extra.label := }
+-    'skip$
+-  if$
+-  extra.label 'next.extra :=
+-  extra.label
+-  duplicate$ empty$
+-    'skip$
+-    { "{\natexlab{" swap$ * "}}" * }
+-  if$
+-  'extra.label :=
+-  label extra.label * 'label :=
+-}
+-
+-EXECUTE {initialize.longest.label}
+-
+-ITERATE {forward.pass}
+-
+-REVERSE {reverse.pass}
+-
+-FUNCTION {bib.sort.order}
+-{ sort.label  'sort.key$ :=
+-}
+-
+-ITERATE {bib.sort.order}
+-
+-SORT
+-
+-FUNCTION {begin.bib}
+-{   preamble$ empty$
+-    'skip$
+-    { preamble$ write$ newline$ }
+-  if$
+-  "\begin{thebibliography}{" number.label int.to.str$ * "}" *
+-  write$ newline$
+-  "\providecommand{\natexlab}[1]{#1}"
+-  write$ newline$
+-  "\providecommand{\url}[1]{\texttt{#1}}"
+-  write$ newline$
+-  "\expandafter\ifx\csname urlstyle\endcsname\relax"
+-  write$ newline$
+-  "  \providecommand{\doi}[1]{doi: #1}\else"
+-  write$ newline$
+-  "  \providecommand{\doi}{doi: \begingroup \urlstyle{rm}\Url}\fi"
+-  write$ newline$
+-}
+-
+-EXECUTE {begin.bib}
+-
+-EXECUTE {init.state.consts}
+-
+-ITERATE {call.type$}
+-
+-FUNCTION {end.bib}
+-{ newline$
+-  "\end{thebibliography}" write$ newline$
+-}
+-
+-EXECUTE {end.bib}
+diff --git a/main.bib b/main.bib
+deleted file mode 100644
+index b7d7057..0000000
+--- a/main.bib
++++ /dev/null
+@@ -1,111 +0,0 @@
+-@String(PAMI = {IEEE Trans. Pattern Anal. Mach. Intell.})
+-@String(IJCV = {Int. J. Comput. Vis.})
+-@String(CVPR= {IEEE Conf. Comput. Vis. Pattern Recog.})
+-@String(ICCV= {Int. Conf. Comput. Vis.})
+-@String(ECCV= {Eur. Conf. Comput. Vis.})
+-@String(NIPS= {Adv. Neural Inform. Process. Syst.})
+-@String(ICPR = {Int. Conf. Pattern Recog.})
+-@String(BMVC= {Brit. Mach. Vis. Conf.})
+-@String(TOG= {ACM Trans. Graph.})
+-@String(TIP  = {IEEE Trans. Image Process.})
+-@String(TVCG  = {IEEE Trans. Vis. Comput. Graph.})
+-@String(TMM  = {IEEE Trans. Multimedia})
+-@String(ACMMM= {ACM Int. Conf. Multimedia})
+-@String(ICME = {Int. Conf. Multimedia and Expo})
+-@String(ICASSP=	{ICASSP})
+-@String(ICIP = {IEEE Int. Conf. Image Process.})
+-@String(ACCV  = {ACCV})
+-@String(ICLR = {Int. Conf. Learn. Represent.})
+-@String(IJCAI = {IJCAI})
+-@String(PR   = {Pattern Recognition})
+-@String(AAAI = {AAAI})
+-@String(CVPRW= {IEEE Conf. Comput. Vis. Pattern Recog. Worksh.})
+-@String(CSVT = {IEEE Trans. Circuit Syst. Video Technol.})
+-
+-@String(SPL	= {IEEE Sign. Process. Letters})
+-@String(VR   = {Vis. Res.})
+-@String(JOV	 = {J. Vis.})
+-@String(TVC  = {The Vis. Comput.})
+-@String(JCST  = {J. Comput. Sci. Tech.})
+-@String(CGF  = {Comput. Graph. Forum})
+-@String(CVM = {Computational Visual Media})
+-
+-
+-@String(PAMI  = {IEEE TPAMI})
+-@String(IJCV  = {IJCV})
+-@String(CVPR  = {CVPR})
+-@String(ICCV  = {ICCV})
+-@String(ECCV  = {ECCV})
+-@String(NIPS  = {NeurIPS})
+-@String(ICPR  = {ICPR})
+-@String(BMVC  =	{BMVC})
+-@String(TOG   = {ACM TOG})
+-@String(TIP   = {IEEE TIP})
+-@String(TVCG  = {IEEE TVCG})
+-@String(TCSVT = {IEEE TCSVT})
+-@String(TMM   =	{IEEE TMM})
+-@String(ACMMM = {ACM MM})
+-@String(ICME  =	{ICME})
+-@String(ICASSP=	{ICASSP})
+-@String(ICIP  = {ICIP})
+-@String(ACCV  = {ACCV})
+-@String(ICLR  = {ICLR})
+-@String(IJCAI = {IJCAI})
+-@String(PR = {PR})
+-@String(AAAI = {AAAI})
+-@String(CVPRW= {CVPRW})
+-@String(CSVT = {IEEE TCSVT})
+-
+-
+-
+-@misc{Authors14,
+- author = {FirstName LastName},
+- title = {The frobnicatable foo filter},
+- note = {Face and Gesture submission ID 324. Supplied as supplemental material {\tt fg324.pdf}},
+- year = 2014
+-}
+-
+-@misc{Authors14b,
+- author = {FirstName LastName},
+- title = {Frobnication tutorial},
+- note = {Supplied as supplemental material {\tt tr.pdf}},
+- year = 2014
+-}
+-
+-@article{Alpher02,
+-author = {FirstName Alpher},
+-title = {Frobnication},
+-journal = PAMI,
+-volume = 12,
+-number = 1,
+-pages = {234--778},
+-year = 2002
+-}
+-
+-@article{Alpher03,
+-author = {FirstName Alpher and  FirstName Fotheringham-Smythe},
+-title = {Frobnication revisited},
+-journal = {Journal of Foo},
+-volume = 13,
+-number = 1,
+-pages = {234--778},
+-year = 2003
+-}
+-
+-@article{Alpher04,
+-author = {FirstName Alpher and FirstName Fotheringham-Smythe and FirstName Gamow},
+-title = {Can a machine frobnicate?},
+-journal = {Journal of Foo},
+-volume = 14,
+-number = 1,
+-pages = {234--778},
+-year = 2004
+-}
+-
+-@inproceedings{Alpher05,
+-author = {FirstName Alpher and FirstName Gamow},
+-title = {Can a computer frobnicate?},
+-booktitle = CVPR,
+-pages = {234--778},
+-year = 2005
+-}
+diff --git a/main.tex b/main.tex
+index 9ee910f..e0a4d51 100644
+--- a/main.tex
++++ b/main.tex
+@@ -1,64 +1,24 @@
+-% CVPR 2026 Paper Template; see https://github.com/cvpr-org/author-kit
+-
++% Working document using the current official CVPR author kit.
+ \documentclass[10pt,twocolumn,letterpaper]{article}
+-
+-%%%%%%%%% PAPER TYPE  - PLEASE UPDATE FOR FINAL VERSION
+-% \usepackage{cvpr}              % To produce the CAMERA-READY version
+-\usepackage[review]{cvpr}      % To produce the REVIEW version
+-% \usepackage[pagenumbers]{cvpr} % To force page numbers, e.g. for an arXiv version
+-
+-% Import additional packages in the preamble file, before hyperref
++\usepackage[pagenumbers]{cvpr}
+ \input{preamble}
+-
+-% It is strongly recommended to use hyperref, especially for the review version.
+-% hyperref with option pagebackref eases the reviewers' job.
+-% Please disable hyperref *only* if you encounter grave issues, 
+-% e.g. with the file validation for the camera-ready version.
+-%
+-% If you comment hyperref and then uncomment it, you should delete *.aux before re-running LaTeX.
+-% (Or just hit 'q' on the first LaTeX run, let it finish, and you should be clear).
+-\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+-\usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+-
+-%%%%%%%%% PAPER ID  - PLEASE UPDATE
+-\def\paperID{*****} % *** Enter the Paper ID here
++\def\paperID{working-notes}
+ \def\confName{CVPR}
+-\def\confYear{2026}
+-
+-%%%%%%%%% TITLE - PLEASE UPDATE
+-\title{\LaTeX\ Author Guidelines for \confName~Proceedings}
+-
+-%%%%%%%%% AUTHORS - PLEASE UPDATE
+-\author{First Author\\
+-Institution1\\
+-Institution1 address\\
+-{\tt\small firstauthor@i1.org}
+-% For a paper whose authors are all at the same institution,
+-% omit the following lines up until the closing ``}''.
+-% Additional authors and addresses can be added with ``\and'',
+-% just like the second author.
+-% To save space, use either the email address or home page, not both
+-\and
+-Second Author\\
+-Institution2\\
+-First line of institution2 address\\
+-{\tt\small secondauthor@i2.org}
+-}
+-
++\def\confYear{2027}
++\title{MetisWAM4D real world}
++\author{实验设置与材料框架\\2026 年 9 月 29 日}
+ \begin{document}
+ \maketitle
+-\input{fig/teaser}
+-\input{sec/0_abstract}    
+-\input{sec/1_intro}
+-\input{sec/2_formatting}
+-\input{sec/3_finalcopy}
+-{
+-    \small
+-    \bibliographystyle{ieeenat_fullname}
+-    \bibliography{main}
+-}
+-
+-% WARNING: do not forget to delete the supplementary pages from your submission 
+-% \input{sec/X_suppl}
+-
++\begin{center}
++\fcolorbox{cvprblue}{blue!4}{\parbox{0.92\columnwidth}{\centering\bfseries
++仅做整理信息用，非正式论文段落。}}
++\end{center}
++\input{sec/real_world}
++\clearpage
++\input{sec/results}
++\clearpage
++\appendix
++\input{sec/appendix_protocol}
++\clearpage
++\input{sec/appendix_data}
+ \end{document}
+diff --git a/preamble.tex b/preamble.tex
+index e14e910..2e6c6c2 100644
+--- a/preamble.tex
++++ b/preamble.tex
+@@ -1,72 +1,11 @@
+-%% This file contains a number of tweaks that are typically applied to the main document.
+-%% They are not enabled by default, but can be enabled by uncommenting the relevant lines.
+-
+-
+-%%
+-%% Official support for 2-column teaser figure
+-%%
+-\usepackage{cuted} %< for strip environment
+-
+-%%
+-%% For auto-referencing of figures (see fig/teaser.tex and \label{} therein) 
+-%%
+-\usepackage{currfile} %< for \currfilebase macro
+-
+-%%
+-%% caption and (global) spacing overrides
+-%%
+-\usepackage{caption} %< for "\captionof" commands (teaser)
+-% \setlength{\abovecaptionskip}{.5em} % space above caption
+-% \setlength{\belowcaptionskip}{1em} % space below caption
+-
+-%%
+-%% Inline annotations; for predefined colors, refer to "dvipsnames" in the xcolor package:
+-%% https://tinyurl.com/overleaf-colors
+-%%
+-\newcommand{\red}[1]{{\color{red}#1}}
+-\newcommand{\todo}[1]{{\color{red}#1}}
+-\newcommand{\TODO}[1]{\textbf{\color{red}[TODO: #1]}}
+-%%
+-%% Disable for camera ready / submission by uncommenting these lines:
+-%%
+-% \renewcommand{\TODO}[1]{}
+-% \renewcommand{\todo}[1]{#1}
+-
+-%%
+-%% Work harder in optimizing text layout. Typically shrinks text by 1/6 of page, enable
+-%% it at the very end of the writing process, when you are just above the page limit.
+-%%
+-% \usepackage{microtype}
+-
+-%%
+-%% Fine-tune paragraph spacing.
+-%%
+-% \renewcommand{\paragraph}[1]{\vspace{.5em}\noindent\textbf{#1.}}
+-
+-%%
+-%% Globally adjusts space between figure and caption.
+-%%
+-% \setlength{\abovecaptionskip}{.5em}
+-
+-%%
+-%% Allows "the use of \paper to refer to the project name"
+-%% with automatic management of space at the end of the word.
+-%%
+-% \usepackage{xspace}
+-% \newcommand{\paper}{ProjectName\xspace}
+-
+-%%
+-%% Commonly used math definitions.
+-%%
+-% \DeclareMathOperator*{\argmin}{arg\,min}
+-% \DeclareMathOperator*{\argmax}{arg\,max}
+-
+-%%
+-%% Tighten underline.
+-%%
+-% \usepackage{soul}
+-% \setuldepth{foobar}
+-
+-%%
+-%% Reconfigure paragraph (tweaks spacing)
+-%%
++\usepackage[UTF8,fontset=fandol,scheme=plain]{ctex}
++\usepackage{graphicx,booktabs,tabularx,array,multirow}
++\usepackage{cuted,caption}
++\captionsetup{hypcap=false}
++\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
++\usepackage[breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
++\newcolumntype{Y}{>{\raggedright\arraybackslash}X}
++\newcommand{\pending}{\textcolor{cvprblue}{待补}}
++\newcommand{\blankresult}{\textemdash}
++\newcommand{\panel}[2]{\fbox{\parbox[c][#1][c]{0.93\linewidth}{\centering\small #2}}}
++\setlength{\emergencystretch}{1em}
+diff --git a/rebuttal.tex b/rebuttal.tex
+deleted file mode 100644
+index 8b5de12..0000000
+--- a/rebuttal.tex
++++ /dev/null
+@@ -1,137 +0,0 @@
+-\documentclass[10pt,twocolumn,letterpaper]{article}
+-\usepackage[rebuttal]{cvpr}
+-
+-% Include other packages here, before hyperref.
+-\usepackage{graphicx}
+-\usepackage{amsmath}
+-\usepackage{amssymb}
+-\usepackage{booktabs}
+-
+-% Import additional packages in the preamble file, before hyperref
+-\input{preamble}
+-
+-% If you comment hyperref and then uncomment it, you should delete
+-% egpaper.aux before re-running latex.  (Or just hit 'q' on the first latex
+-% run, let it finish, and you should be clear).
+-\definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+-\usepackage[pagebackref,breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+-
+-% If you wish to avoid re-using figure, table, and equation numbers from
+-% the main paper, please uncomment the following and change the numbers
+-% appropriately.
+-%\setcounter{figure}{2}
+-%\setcounter{table}{1}
+-%\setcounter{equation}{2}
+-
+-% If you wish to avoid re-using reference numbers from the main paper,
+-% please uncomment the following and change the counter value to the
+-% number of references you have in the main paper (here, 100).
+-%\makeatletter
+-%\apptocmd{\thebibliography}{\global\c@NAT@ctr 100\relax}{}{}
+-%\makeatother
+-
+-%%%%%%%%% PAPER ID  - PLEASE UPDATE
+-\def\paperID{*****} % *** Enter the Paper ID here
+-\def\confName{CVPR}
+-\def\confYear{2026}
+-
+-\begin{document}
+-
+-%%%%%%%%% TITLE - PLEASE UPDATE
+-\title{\LaTeX\ Guidelines for Author Response}  % **** Enter the paper title here
+-
+-\maketitle
+-\thispagestyle{empty}
+-\appendix
+-
+-%%%%%%%%% BODY TEXT - ENTER YOUR RESPONSE BELOW
+-\section{Introduction}
+-
+-After receiving paper reviews, authors may optionally submit a rebuttal to address the reviewers' comments, which will be limited to a {\bf one page} PDF file.
+-Please follow the steps and style guidelines outlined below for submitting your author response.
+-
+-The author rebuttal is optional and, following similar guidelines to previous conferences, is meant to provide you with an opportunity to rebut factual errors or to supply additional information requested by the reviewers.
+-It is NOT intended to add new contributions (theorems, algorithms, experiments) that were absent in the original submission and NOT specifically requested by the reviewers.
+-You may optionally add a figure, graph, or proof to your rebuttal to better illustrate your answer to the reviewers' comments.
+-
+-Per a passed 2018 PAMI-TC motion, reviewers should refrain from requesting significant additional experiments for the rebuttal or penalize for lack of additional experiments.
+-Authors should refrain from including new experimental results in the rebuttal, especially when not specifically requested to do so by the reviewers.
+-Authors may include figures with illustrations or comparison tables of results reported in the submission/supplemental material or in other papers.
+-
+-Just like the original submission, the rebuttal must maintain anonymity and cannot include external links that reveal the author identity or circumvent the length restriction.
+-The rebuttal must comply with this template (the use of sections is not required, though it is recommended to structure the rebuttal for ease of reading).
+-
+-%-------------------------------------------------------------------------
+-
+-\subsection{Response length}
+-Author responses must be no longer than 1 page in length including any references and figures.
+-Overlength responses will simply not be reviewed.
+-This includes responses where the margins and formatting are deemed to have been significantly altered from those laid down by this style guide.
+-Note that this \LaTeX\ guide already sets figure captions and references in a smaller font.
+-
+-%------------------------------------------------------------------------
+-\section{Formatting your Response}
+-
+-{\bf Make sure to update the paper title and paper ID in the appropriate place in the tex file.}
+-
+-All text must be in a two-column format.
+-The total allowable size of the text area is $6\frac78$ inches (17.46 cm) wide by $8\frac78$ inches (22.54 cm) high.
+-Columns are to be $3\frac14$ inches (8.25 cm) wide, with a $\frac{5}{16}$ inch (0.8 cm) space between them.
+-The top margin should begin 1 inch (2.54 cm) from the top edge of the page.
+-The bottom margin should be $1\frac{1}{8}$ inches (2.86 cm) from the bottom edge of the page for $8.5 \times 11$-inch paper;
+-for A4 paper, approximately $1\frac{5}{8}$ inches (4.13 cm) from the bottom edge of the page.
+-
+-Please number any displayed equations.
+-It is important for readers to be able to refer to any particular equation.
+-
+-Wherever Times is specified, Times Roman may also be used.
+-Main text should be in 10-point Times, single-spaced.
+-Section headings should be in 10 or 12 point Times.
+-All paragraphs should be indented 1 pica (approx.~$\frac{1}{6}$ inch or 0.422 cm).
+-Figure and table captions should be 9-point Roman type as in \cref{fig:onecol}.
+-
+-
+-List and number all bibliographical references in 9-point Times, single-spaced,
+-at the end of your response.
+-When referenced in the text, enclose the citation number in square brackets, for example~\cite{Alpher05}.
+-Where appropriate, include the name(s) of editors of referenced books.
+-
+-\begin{figure}[t]
+-  \centering
+-  \fbox{\rule{0pt}{0.5in} \rule{0.9\linewidth}{0pt}}
+-  %\includegraphics[width=0.8\linewidth]{egfigure.eps}
+-   \caption{Example of caption.  It is set in Roman so that mathematics
+-   (always set in Roman: $B \sin A = A \sin B$) may be included without an
+-   ugly clash.}
+-   \label{fig:onecol}
+-\end{figure}
+-
+-To avoid ambiguities, it is best if the numbering for equations, figures, tables, and references in the author response does not overlap with that in the main paper (the reviewer may wonder if you talk about \cref{fig:onecol} in the author response or in the paper).
+-See \LaTeX\ template for a workaround.
+-
+-%-------------------------------------------------------------------------
+-\subsection{Illustrations, graphs, and photographs}
+-
+-All graphics should be centered.
+-Please ensure that any point you wish to make is resolvable in a printed copy of the response.
+-Resize fonts in figures to match the font in the body text, and choose line widths which render effectively in print.
+-Readers (and reviewers), even of an electronic copy, may choose to print your response in order to read it.
+-You cannot insist that they do otherwise, and therefore must not assume that they can zoom in to see tiny details on a graphic.
+-
+-When placing figures in \LaTeX, it is almost always best to use \verb+\includegraphics+, and to specify the  figure width as a multiple of the line width as in the example below
+-{\small\begin{verbatim}
+-   \usepackage{graphicx} ...
+-   \includegraphics[width=0.8\linewidth]
+-                   {myfile.pdf}
+-\end{verbatim}
+-}
+-
+-
+-%%%%%%%%% REFERENCES
+-{
+-    \small
+-    \bibliographystyle{ieeenat_fullname}
+-    \bibliography{main}
+-}
+-
+-\end{document}
+diff --git a/sec/0_abstract.tex b/sec/0_abstract.tex
+deleted file mode 100644
+index 116b85f..0000000
+--- a/sec/0_abstract.tex
++++ /dev/null
+@@ -1,7 +0,0 @@
+-\begin{abstract}
+-The ABSTRACT is to be in fully justified italicized text, at the top of the left-hand column, below the author and affiliation information.
+-Use the word ``Abstract'' as the title, in 12-point Times, boldface type, centered relative to the column, initially capitalized.
+-The abstract is to be in 10-point, single-spaced type.
+-Leave two blank lines after the Abstract, then begin the main text.
+-Look at previous \confName abstracts to get a feel for style and length.
+-\end{abstract}
+\ No newline at end of file
+diff --git a/sec/1_intro.tex b/sec/1_intro.tex
+deleted file mode 100644
+index 2b58564..0000000
+--- a/sec/1_intro.tex
++++ /dev/null
+@@ -1,202 +0,0 @@
+-\section{Introduction}
+-\label{sec:intro}
+-
+-Please follow the steps outlined below when submitting your manuscript to the IEEE Computer Society Press.
+-This style guide now has several important modifications (for example, you are no longer warned against the use of sticky tape to attach your artwork to the paper), so all authors should read this new version.
+-
+-%-------------------------------------------------------------------------
+-\subsection{Language}
+-
+-All manuscripts must be in English.
+-
+-\subsection{Dual submission}
+-
+-Please refer to the author guidelines on the \confName\ \confYear\ web page for a
+-discussion of the policy on dual submissions.
+-
+-\subsection{Paper length}
+-Papers, excluding the references section, must be no longer than eight pages in length.
+-The references section will not be included in the page count, and there is no limit on the length of the references section.
+-For example, a paper of eight pages with two pages of references would have a total length of 10 pages.
+-{\bf There will be no extra page charges for \confName\ \confYear.}
+-
+-Overlength papers will simply not be reviewed.
+-This includes papers where margins and formatting are deemed to have been significantly altered from those laid down by this style guide.
+-Note that this \LaTeX\ guide already sets the figure captions and references in a smaller font.
+-The reason why such papers will not be reviewed is that there is no provision for supervised revisions of manuscripts.
+-The review process cannot determine the suitability of the paper for presentation in eight pages if it is reviewed in 11 pages.
+-
+-%-------------------------------------------------------------------------
+-\subsection{The ruler}
+-The \LaTeX\ style defines a printed ruler that should be present in the version submitted for review.
+-The ruler is provided in order that reviewers may comment on particular lines in the paper without circumlocution.
+-If you are preparing a document using a non-\LaTeX\ document preparation system, arrange for an equivalent ruler to appear on the final output pages.
+-The presence or absence of the ruler should not change the appearance of any other content on the page.
+-The camera-ready copy should not contain a ruler.
+-(\LaTeX\ users may use the options of \texttt{cvpr.sty} to switch between different versions.)
+-
+-Reviewers:
+-note that the ruler measurements do not align well with lines in the paper --- this turns out to be very difficult to do well when the paper contains many figures and equations, and, when done, looks ugly.
+-Use fractional references (\eg, this line is $087.5$), although in most cases the approximate location would be adequate.
+-
+-
+-\subsection{Paper ID}
+-Make sure that the Paper ID from the submission system is visible in the version submitted for review (replacing the ``*****'' you see in this document).
+-If you are using the \LaTeX\ template, \textbf{make sure to update paper ID in the appropriate place in the tex file}.
+-
+-
+-\subsection{Mathematics}
+-
+-Please, number all of your sections and displayed equations as in these examples:
+-\begin{equation}
+-  E = m\cdot c^2
+-  \label{eq:important}
+-\end{equation}
+-and
+-\begin{equation}
+-  v = a\cdot t.
+-  \label{eq:also-important}
+-\end{equation}
+-It is important for the reader to be able to refer to any particular equation.
+-Just because you did not refer to it in the text does not mean that some future reader might not need to refer to it.
+-It is cumbersome to have to use circumlocutions like ``the equation second from the top of page 3 column 1''.
+-(Note that the ruler will not be present in the final copy, so is not an alternative to equation numbers).
+-All authors will benefit from reading Mermin's description of how to write mathematics:
+-\url{http://www.pamitc.org/documents/mermin.pdf}.
+-
+-\subsection{Blind review}
+-
+-Many authors misunderstand the concept of anonymizing for blind review.
+-Blind review does not mean that one must remove citations to one's own work---in fact it is often impossible to review a paper unless the previous citations are known and available.
+-
+-Blind review means that you do not use the words ``my'' or ``our'' when citing previous work.
+-That is all.
+-(But see below for tech reports.)
+-
+-Saying ``this builds on the work of Lucy Smith [1]'' does not mean that you are Lucy Smith;
+-it says that you are building on her work.
+-If you are Smith and Jones, do not say ``as we show in [7]'', say ``as Smith and Jones show in [7]'' and at the end of the paper, include reference 7 as you would any other cited work.
+-
+-An example of a bad paper just asking to be rejected:
+-\begin{quote}
+-\begin{center}
+-    An analysis of the frobnicatable foo filter.
+-\end{center}
+-
+-   In this paper, we present a performance analysis of our previous paper [1], and show that it is inferior to all previously known methods.
+-   Why the previous paper was accepted without this analysis is beyond me.
+-
+-   [1] Removed for blind review
+-\end{quote}
+-
+-
+-An example of an acceptable paper:
+-\begin{quote}
+-\begin{center}
+-     An analysis of the frobnicatable foo filter.
+-\end{center}
+-
+-   In this paper, we present a performance analysis of the paper of Smith \etal [1], and show it to be inferior to all previously known methods.
+-   Why the previous paper was accepted without this analysis is beyond me.
+-
+-   [1] Smith, L and Jones, C. ``The frobnicatable foo filter, a fundamental contribution to human knowledge''. Nature 381(12), 1-213.
+-\end{quote}
+-
+-If you are making a submission to another conference at the same time that covers similar or overlapping material, you may need to refer to that submission to explain the differences, just as you would if you had previously published related work.
+-In such cases, include the anonymized parallel submission~\cite{Authors14} as supplemental material and cite it as
+-\begin{quote}
+-[1] Authors. ``The frobnicatable foo filter'', F\&G 2014 Submission ID 324, Supplied as supplemental material {\tt fg324.pdf}.
+-\end{quote}
+-
+-Finally, you may feel you need to tell the reader that more details can be found elsewhere and refer them to a technical report.
+-For conference submissions, the paper must stand on its own, and not {\em require} the reviewer to go to a tech report for further details.
+-Thus, you may say in the body of the paper ``further details may be found in~\cite{Authors14b}''.
+-Then submit the tech report as supplemental material.
+-Again, do not assume that the reviewers will read this material.
+-
+-Sometimes your paper is about a problem that you tested using a tool that is widely known to be restricted to a single institution.
+-For example, let's say it's 1969, you have solved a key problem on the Apollo lander, and you believe that the 1970 audience would like to hear about your
+-solution.
+-The work is a development of your celebrated 1968 paper entitled ``Zero-g frobnication: How being the only people in the world with access to the Apollo lander source code makes us a wow at parties'', by Zeus \etal.
+-
+-You can handle this paper like any other.
+-Do not write ``We show how to improve our previous work [Anonymous, 1968].
+-This time we tested the algorithm on a lunar lander [name of lander removed for blind review]''.
+-That would be silly, and would immediately identify the authors.
+-Instead write the following:
+-\begin{quotation}
+-\noindent
+-   We describe a system for zero-g frobnication.
+-   This system is new because it handles the following cases:
+-   A, B.  Previous systems [Zeus et al. 1968] did not  handle case B properly.
+-   Ours handles it by including a foo term in the bar integral.
+-
+-   ...
+-
+-   The proposed system was integrated with the Apollo lunar lander, and went all the way to the moon, don't you know.
+-   It displayed the following behaviours, which show how well we solved cases A and B: ...
+-\end{quotation}
+-As you can see, the above text follows standard scientific convention, reads better than the first version, and does not explicitly name you as the authors.
+-A reviewer might think that it is likely that the new article was written by Zeus \etal, but cannot make any decision based on that guess.
+-He or she would have to be sure that no other authors could have been contracted to solve problem B.
+-\medskip
+-
+-\noindent
+-FAQ\medskip\\
+-{\bf Q:} Are acknowledgements OK?\\
+-{\bf A:} No.  Leave them for the final copy.\medskip\\
+-{\bf Q:} How do I cite my results reported in open challenges?
+-{\bf A:} To conform with the double-blind review policy, you can report results of other challenge participants together with your results in your paper.
+-However, for your results, you should not identify yourself and should not mention your participation in the challenge.
+-Instead, present your results referring to the method proposed in your paper and draw conclusions based on the experimental comparison with other results.\medskip\\
+-
+-\begin{figure}[t]
+-  \centering
+-  \fbox{\rule{0pt}{2in} \rule{0.9\linewidth}{0pt}}
+-   %\includegraphics[width=0.8\linewidth]{egfigure.eps}
+-
+-   \caption{Example of caption.
+-   It is set in Roman so that mathematics (always set in Roman: $B \sin A = A \sin B$) may be included without an ugly clash.}
+-   \label{fig:onecol}
+-\end{figure}
+-
+-\subsection{Miscellaneous}
+-
+-\noindent
+-Compare the following:\\
+-\begin{tabular}{ll}
+- \verb'$conf_a$' &  $conf_a$ \\
+- \verb'$\mathit{conf}_a$' & $\mathit{conf}_a$
+-\end{tabular}\\
+-See The \TeX book, p165.
+-
+-The space after \eg, meaning ``for example'', should not be a sentence-ending space.
+-So \eg is correct, {\em e.g.} is not.
+-The provided \verb'\eg' macro takes care of this.
+-
+-When citing a multi-author paper, you may save space by using ``et alia'', shortened to ``\etal'' (not ``{\em et.\ al.}'' as ``{\em et}'' is a complete word).
+-If you use the \verb'\etal' macro provided, then you need not worry about double periods when used at the end of a sentence as in Alpher \etal.
+-However, use it only when there are three or more authors.
+-Thus, the following is correct:
+-   ``Frobnication has been trendy lately.
+-   It was introduced by Alpher~\cite{Alpher02}, and subsequently developed by
+-   Alpher and Fotheringham-Smythe~\cite{Alpher03}, and Alpher \etal~\cite{Alpher04}.''
+-
+-This is incorrect: ``... subsequently developed by Alpher \etal~\cite{Alpher03} ...'' because reference~\cite{Alpher03} has only two authors.
+-
+-\begin{figure*}
+-  \centering
+-  \begin{subfigure}{0.68\linewidth}
+-    \fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+-    \caption{An example of a subfigure.}
+-    \label{fig:short-a}
+-  \end{subfigure}
+-  \hfill
+-  \begin{subfigure}{0.28\linewidth}
+-    \fbox{\rule{0pt}{2in} \rule{.9\linewidth}{0pt}}
+-    \caption{Another example of a subfigure.}
+-    \label{fig:short-b}
+-  \end{subfigure}
+-  \caption{Example of a short caption, which should be centered.}
+-  \label{fig:short}
+-\end{figure*}
+diff --git a/sec/2_formatting.tex b/sec/2_formatting.tex
+deleted file mode 100644
+index 2fe2a9b..0000000
+--- a/sec/2_formatting.tex
++++ /dev/null
+@@ -1,153 +0,0 @@
+-\section{Formatting your paper}
+-\label{sec:formatting}
+-
+-All text must be in two-column format.
+-The total allowable size of the text area is $6\frac78$ inches (17.46 cm) wide by $8\frac78$ inches (22.54 cm) high.
+-The columns should be $3\frac14$ inches (8.25 cm) wide, with a $\frac{5}{16}$ inch (0.8 cm) space between them.
+-The main title (on the first page) should begin 1 inch (2.54 cm) from the top edge of the page.
+-The second and following pages should begin 1 inch (2.54 cm) from the top edge.
+-On all pages, the bottom margin should be $1\frac{1}{8}$ inches (2.86 cm) from the bottom edge of the page for $8.5 \times 11$-inch paper;
+-for A4 paper, approximately $1\frac{5}{8}$ inches (4.13 cm) from the bottom edge of the
+-page.
+-
+-%-------------------------------------------------------------------------
+-\subsection{Margins and page numbering}
+-
+-All printed material, including text, illustrations, and charts, must be kept
+-within a print area $6\frac{7}{8}$ inches (17.46 cm) wide by $8\frac{7}{8}$ inches (22.54 cm)
+-high.
+-%
+-Page numbers should be in the footer, centered, and $\frac{3}{4}$ inches from the bottom of the page.
+-The review version should have page numbers, yet the final version submitted as camera ready should not show any page numbers.
+-The \LaTeX\ template takes care of this when used properly.
+-
+-
+-
+-%-------------------------------------------------------------------------
+-\subsection{Type style and fonts}
+-
+-Wherever Times is specified, Times Roman may also be used.
+-If neither is available on your word processor, please use the font closest in
+-appearance to Times to which you have access.
+-
+-MAIN TITLE.
+-Center the title $1\frac{3}{8}$ inches (3.49 cm) from the top edge of the first page.
+-The title should be in Times 14-point, boldface type.
+-Capitalize the first letter of nouns, pronouns, verbs, adjectives, and adverbs;
+-do not capitalize articles, coordinate conjunctions, or prepositions (unless the title begins with such a word).
+-Leave two blank lines after the title.
+-
+-AUTHOR NAME(s) and AFFILIATION(s) are to be centered beneath the title
+-and printed in Times 12-point, non-boldface type.
+-This information is to be followed by two blank lines.
+-
+-The ABSTRACT and MAIN TEXT are to be in a two-column format.
+-
+-MAIN TEXT.
+-Type main text in 10-point Times, single-spaced.
+-Do NOT use double-spacing.
+-All paragraphs should be indented 1 pica (approx.~$\frac{1}{6}$ inch or 0.422 cm).
+-Make sure your text is fully justified---that is, flush left and flush right.
+-Please do not place any additional blank lines between paragraphs.
+-
+-The captions of the figures and tables should be in 9-point Roman type as in \cref{fig:onecol,fig:short}.
+-Short captions should be centered.  Table captions should be above tables, while figure captions should be below figures.
+-
+-\noindent Callouts should be 9-point Helvetica, non-boldface type.
+-Initially capitalize only the first word of section titles and first-, second-, and third-order headings.
+-
+-FIRST-ORDER HEADINGS.
+-(For example, {\large \bf 1. Introduction}) should be Times 12-point boldface, initially capitalized, flush left, with one blank line before and one blank line after.
+-
+-SECOND-ORDER HEADINGS.
+-(For example, { \bf 1.1. Database elements}) should be Times 11-point boldface, initially capitalized, flush left, with one blank line before and one after.
+-If you require a third-order heading (we discourage it), use 10-point Times, boldface, initially capitalized, flush left, preceded by one blank line, followed by a period, and your text on the same line.
+-
+-%-------------------------------------------------------------------------
+-\subsection{Footnotes}
+-
+-Please use the footnotes\footnote{This is what a footnote looks like.
+-It often distracts the reader from the main flow of the argument.} sparingly.
+-Indeed, try to avoid footnotes altogether and include necessary peripheral observations in the text (within parentheses, if you prefer, as in this sentence).
+-If you wish to use a footnote, place it at the bottom of the column on the page on which it is referenced.
+-Use Times 8-point type, single-spaced.
+-
+-
+-%-------------------------------------------------------------------------
+-\subsection{Cross-references}
+-
+-For the benefit of author(s) and readers, please use the
+-{\small\begin{verbatim}
+-  \cref{...}
+-\end{verbatim}}  command for cross-referencing to figures, tables, equations, or sections.
+-This will automatically insert the appropriate label alongside the cross-reference as in this example:
+-\begin{quotation}
+-  To see how our method outperforms previous work, see \cref{fig:onecol} and \cref{tab:example}.
+-  It is also possible to refer to multiple targets as once, \eg~to \cref{fig:onecol,fig:short-a}.
+-  You may also return to \cref{sec:formatting} or look at \cref{eq:also-important}.
+-\end{quotation}
+-If you do not wish to abbreviate the label, for example, at the beginning of the sentence, you can use
+-{\small\begin{verbatim}
+-  \Cref{...}
+-\end{verbatim}}
+-command. Here is an example:
+-\begin{quotation}
+-  \Cref{fig:onecol} is quite important, but \Cref{fig:teaser} typically even more so, as it's the first figure the reader will see.
+-\end{quotation}
+-
+-%-------------------------------------------------------------------------
+-\subsection{References}
+-
+-List and number all bibliographical references in 9-point Times, single-spaced, at the end of your paper.
+-When referenced in the text, include the citation number in square brackets, for
+-example~\cite{Authors14}.
+-Where appropriate, include page numbers and the name(s) of editors of referenced books.
+-When citing multiple papers at once, make sure that you cite them in numerical order such as this \cite{Alpher02,Alpher03,Alpher05,Authors14b,Authors14}.
+-If you use the template as advised, this will be taken care of automatically.
+-
+-\begin{table}
+-  \caption{Results.   Ours is better.}
+-  \label{tab:example}
+-  \centering
+-  \begin{tabular}{@{}lc@{}}
+-    \toprule
+-    Method & Frobnability \\
+-    \midrule
+-    Theirs & Frumpy \\
+-    Yours & Frobbly \\
+-    Ours & Makes one's heart Frob\\
+-    \bottomrule
+-  \end{tabular}
+-\end{table}
+-
+-%-------------------------------------------------------------------------
+-\subsection{Illustrations, graphs, and photographs}
+-
+-All graphics should be centered.
+-In \LaTeX, avoid using the \texttt{center} environment for this purpose, as this adds potentially unwanted whitespace.
+-Instead, use
+-{\small\begin{verbatim}
+-  \centering
+-\end{verbatim}}
+-at the beginning of your figure.
+-Please ensure that any point you wish to make is resolvable in a printed copy of the paper.
+-Resize fonts in figures to match the font in the body text, and choose line widths that render effectively in print.
+-Readers (and reviewers), even of an electronic copy, may choose to print your paper in order to read it.
+-You cannot insist that they do otherwise and, therefore, must not assume that they can zoom in to see tiny details on a graphic.
+-
+-When placing figures in \LaTeX, it is almost always best to use \verb+\includegraphics+, and to specify the figure width as a multiple of the line width as in the example below
+-{\small\begin{verbatim}
+-   \usepackage{graphicx} ...
+-   \includegraphics[width=0.8\linewidth]
+-                   {myfile.pdf}
+-\end{verbatim}
+-}
+-
+-
+-%-------------------------------------------------------------------------
+-\subsection{Color}
+-
+-Please refer to the author guidelines on the \confName\ \confYear\ web page for a discussion of the use of color in your document.
+-
+-If you use color in your plots, please keep in mind that a significant subset of reviewers and readers may have a color vision deficiency; red-green blindness is the most frequent kind.
+-Hence, avoid relying only on color as the discriminative feature in plots (such as red \vs green lines), but add a second discriminative feature to ease disambiguation.
+\ No newline at end of file
+diff --git a/sec/3_finalcopy.tex b/sec/3_finalcopy.tex
+deleted file mode 100644
+index f42d3bf..0000000
+--- a/sec/3_finalcopy.tex
++++ /dev/null
+@@ -1,7 +0,0 @@
+-\section{Final copy}
+-
+-You must include your signed IEEE copyright release form when you submit your finished paper.
+-We MUST have this form before your paper can be published in the proceedings.
+-
+-Please direct any questions to the production editor in charge of these proceedings at the IEEE Computer Society Press:
+-\url{https://www.computer.org/about/contact}.
+\ No newline at end of file
+diff --git a/sec/X_suppl.tex b/sec/X_suppl.tex
+deleted file mode 100644
+index f472415..0000000
+--- a/sec/X_suppl.tex
++++ /dev/null
+@@ -1,17 +0,0 @@
+-\clearpage
+-\setcounter{page}{1}
+-\maketitlesupplementary
+-
+-
+-\section{Rationale}
+-\label{sec:rationale}
+-% 
+-Having the supplementary compiled together with the main paper means that:
+-% 
+-\begin{itemize}
+-\item The supplementary can back-reference sections of the main paper, for example, we can refer to \cref{sec:intro};
+-\item The main paper can forward reference sub-sections within the supplementary explicitly (e.g. referring to a particular experiment); 
+-\item When submitted to arXiv, the supplementary will already included at the end of the paper.
+-\end{itemize}
+-% 
+-To split the supplementary pages from the main paper, you can use \href{https://support.apple.com/en-ca/guide/preview/prvw11793/mac#:~:text=Delete%20a%20page%20from%20a,or%20choose%20Edit%20%3E%20Delete).}{Preview (on macOS)}, \href{https://www.adobe.com/acrobat/how-to/delete-pages-from-pdf.html#:~:text=Choose%20%E2%80%9CTools%E2%80%9D%20%3E%20%E2%80%9COrganize,or%20pages%20from%20the%20file.}{Adobe Acrobat} (on all OSs), as well as \href{https://superuser.com/questions/517986/is-it-possible-to-delete-some-pages-of-a-pdf-document}{command line tools}.
+\ No newline at end of file
+diff --git a/sec/appendix_data.tex b/sec/appendix_data.tex
+new file mode 100644
+index 0000000..bcc16e0
+--- /dev/null
++++ b/sec/appendix_data.tex
+@@ -0,0 +1,43 @@
++\section{硬件、数据与展示产物}
++\subsection{硬件与控制接口}
++\begin{table}[htbp]
++\centering\small
++\caption{现有基础设施及待补配置。}
++\begin{tabularx}{\linewidth}{@{}lY@{}}
++\toprule
++项目 & 当前记录\\\midrule
++机器人 & 单臂 UR5e\\
++相机 & 固定主视角、腕部视角；型号\pending\\
++深度 & 拟保存主视角 RGB 对齐深度\\
++机器人状态 & 关节位置／速度、TCP 位姿\\
++夹爪 & 指令状态；具体硬件\pending\\
++采集方式 & Freedrive 示范；实际采样率\pending\\
++动作接口 & 单臂映射与执行频率\pending\\
++推理硬件 & GPU、延迟与动作块长度\pending\\
++\bottomrule
++\end{tabularx}
++\end{table}
++
++\begin{figure}[htbp]
++\centering
++\panel{31mm}{硬件照片占位\\标注 UR5e、夹爪、固定相机、腕部相机\\显示桌面工作区域与相机朝向}
++\caption{硬件与视角布置。参考 FlowWAM Figure 6 和 OpenWAM Figure 18 的标注方式。}
++\end{figure}
++
++\subsection{原始记录与离线处理}
++已有采集代码保存双视角 RGB、RTDE 状态、夹爪指令状态、episode 元数据和同步索引。新增记录项包括主视角深度、深度单位、RGB--depth 对齐方式、相机内参、相机帧号与时间戳。
++
++离线处理生成前景 mask、机器人／物体角色标签，以及结合 RGB 光流和深度得到的 Track UVD。处理版本、有效像素比例和异常帧随 episode 保存。固定主视角作为首选 Track 视角；腕部视角提供 RGB 观察。
++
++\subsection{相机参数与标定路径}
++RealSense SDK 提供出厂内参、同一相机内部的彩色／深度外参和深度尺度；这些参数可直接读取保存。相机到机器人基座的变换属于另一层参数，涉及世界坐标点云融合、机器人投影或移动相机运动补偿时再配置。当前以固定相机中的 UVD 表示组织几何数据。
++
++\subsection{训练、部署和展示}
++分别记录训练监督、部署输入和生成输出：训练可以使用未来深度与轨迹；部署只使用当前可获得的观察；预测分支输出作为内部表示和可选可视化。记录视频、Track、动作专家的训练范围，以及推理时各分支的实际采样配置。
++
++实机执行录像、模型生成视频和轨迹预测分别保存并标注。展示策略执行时使用实机录像；展示预测质量时使用对应的预测和参考片段。
++
++\subsection{交付材料清单}
++主文保留四任务场景图和一张含 OOD 的主结果表。附录包括硬件照片、任务终点表、随机化范围、示范／评估协议和数据处理说明。可选材料包括 OOD 对照图、预测与执行序列、失败案例和推理开销。
++
++\paragraph{基础设施版本。}\href{https://github.com/Yutenji-Nyamu/UR5e-RoboTwin-Real}{UR5e-RoboTwin-Real}，本次只读核对的提交为 \texttt{097922c}。该版本的相机采集流为 RGB，深度记录列为本次方案的待实现项。
+diff --git a/sec/appendix_protocol.tex b/sec/appendix_protocol.tex
+new file mode 100644
+index 0000000..b34366a
+--- /dev/null
++++ b/sec/appendix_protocol.tex
+@@ -0,0 +1,23 @@
++\section{任务、随机化与评估细节}
++\begin{strip}
++\centering
++\input{tables/task_criteria}
++\end{strip}
++\subsection{示范与训练设置}
++每个任务的示范量为\pending；记录 episode 列表、训练分区、相机视角与帧率、动作表示和归一化方式。所有方法共享示范清单；各方法的预训练权重、微调范围、训练步数、batch size 和随机种子填入复现记录。
++
++\subsection{随机化支持范围}
++\textbf{位置：}训练和评估均在指定桌面区域内随机，范围、朝向和采样方式为\pending。\textbf{桌布：}训练桌布集合为\pending，OOD 使用的留出桌布编号为\pending。\textbf{物体外观：}目标物体的身份、颜色／纹理版本和保持不变的语义为\pending。\textbf{干扰物：}训练场景配置为\pending，测试留出的干扰物种类、数量和区域为\pending。
++
++每次 OOD 试验只改变一个因素，并复用相同的初始化编号供三个方法比较。道具变化以照片和 ID 记录。
++
++\subsection{试验数、时限与汇总}
++当前约定每任务、每方法 20 次，单次 120 秒；四条件分配为\pending。若每条件 20 次，四任务、三方法、四条件共 960 次；若四条件合计 20 次，共 240 次。最终使用的口径在采集清单和主表中保持一致。
++
++成功率 $\mathrm{SR}=N_{\mathrm{success}}/N_{\mathrm{trial}}$。每次试验使用表~\ref{tab:criteria} 的完整终点判据。保留原始 $k/n$，并按任务等权汇总；阶段完成情况作为诊断字段单独记录。
++
++\subsection{结束条件与失败类型}
++达到完整终点时记录成功和完成时间；到达 120 秒时记录超时。人工中止、设备异常等事件分别登记，并在汇总前依据统一规则处理。失败类型包括抓取失败、放置越界、对齐失败、碰撞、目标混淆与超时，按实际试验补充。
++
++\subsection{本附录对应的参考}
++Efficient-WAM 在正文 \S4.3 写示范量、试验数、时限和五任务判据；WAM4D Table 4 列任务分步判据；OpenWAM Appendix C 提供硬件图、任务序列和终点定义。本项目以一张任务表加简短协议文字组织这些材料。
+diff --git a/sec/real_world.tex b/sec/real_world.tex
+new file mode 100644
+index 0000000..6b97d23
+--- /dev/null
++++ b/sec/real_world.tex
+@@ -0,0 +1,34 @@
++\section{真机实验：当前设定}
++\paragraph{实验目的。}以普通放置任务作为参照，考察几何和运动信息对外观变化下的稳定性、精细操作的帮助。当前关注两个问题：外观变化下是否更稳；对齐和窄容差操作的提升是否更大。实际结论由表~\ref{tab:real-results} 的测量结果填写。
++
++\paragraph{平台与输入。}现有平台为单臂 UR5e，配固定主相机和腕部相机。策略输入包括 RGB、机器人本体状态和任务指令；几何分支的数据准备包括主视角深度、前景分割及离线轨迹。相机型号、控制频率和动作接口在附录补齐。
++
++\paragraph{任务与方法。}当前四任务为：放入抽屉、放进盒子、积木分类、插接。对比方法为 OpenWAM-Alpha、X-WAM 和 MetisWAM4D。每个方法使用相同任务定义、训练示范列表和评估条件；单臂动作与相机映射记入实现记录。
++
++\paragraph{评估条件。}物体位置在训练和测试时均随机。主表包含 ID、未见桌布、未见物体外观、未见干扰物四种条件；每个 OOD 条件只改变相应因素，其余因素沿用 ID 设置。具体道具编号、位置范围和干扰物区域填入附录。
++
++\paragraph{评估预算。}当前约定每任务、每方法 20 次，单次时限 120 秒。20 次在四种条件之间的分配待确认，并在表中保留各条件样本数；示范量单独填写。
++
++\begin{figure}[htbp]
++\centering
++\begin{tabular}{@{}cc@{}}
++\begin{minipage}{.46\linewidth}\panel{22mm}{放入抽屉\\初始状态／终点}\end{minipage}&
++\begin{minipage}{.46\linewidth}\panel{22mm}{放进盒子\\初始状态／终点}\end{minipage}\\[2mm]
++\begin{minipage}{.46\linewidth}\panel{22mm}{积木分类\\初始状态／终点}\end{minipage}&
++\begin{minipage}{.46\linewidth}\panel{22mm}{插接\\初始状态／终点}\end{minipage}
++\end{tabular}
++\caption{四任务场景图占位。每个任务使用一致视角，补充可辨认的目标物体和终点状态。}
++\label{fig:tasks}
++\end{figure}
++
++\subsection{任务与方法的关系}
++\textbf{放进盒子}提供普通抓取放置参照；\textbf{放入抽屉}涉及容器边界、相对位置和局部遮挡；\textbf{积木分类}包含多物体识别、抓取与连续放置；\textbf{插接}强调相对姿态、对齐和接触。难度随容器开口、放置容差、物体数量和插接配合方式确定，具体级别在任务终点表中填写。
++
++物体外观变化保留任务语义。对于颜色分类，变化可以是同色不同纹理或外观；颜色与目标盒的对应关系保持一致。
++
++\subsection{参考材料的使用位置}
++主表参考 OpenWAM Table 8 的 ID/OOD 并列形式；泛化条件参考 X-WAM Table 8 和主页的桌布、干扰物展示，以及 Track4Action 的物体颜色变化。四任务场景图参考 WAM4D Figure 4；硬件附录参考 FlowWAM Figure 6；任务终点表参考 WAM4D Table 4。
++
++\paragraph{材料索引。}\href{https://github.com/Yutenji-Nyamu/MetisWAM4D-real-world-doc}{公开讨论与证据目录}分别保存图表索引、按论文部位整理、数值对照、OOD 口径、数据处理说明。本文框架与具体参考出处同步更新。
++
++\paragraph{模板来源。}本项目复制自干净 CVPR 模板项目。当前官方 author kit 的正文年份为 2026；项目以 CVPR 2027 为准备目标，模板来源与版本记录见 \texttt{TEMPLATE\_STATUS.md}。
+diff --git a/sec/results.tex b/sec/results.tex
+new file mode 100644
+index 0000000..1491461
+--- /dev/null
++++ b/sec/results.tex
+@@ -0,0 +1,30 @@
++\section{结果与展示材料}
++\begin{strip}
++\centering
++\input{tables/real_results}
++\end{strip}
++
++\subsection{正文论述的填空顺序}
++\paragraph{总体表现。}填写 ID 及三类 OOD 的各任务成功率，随后报告任务平均值与相对两个基线的百分点差。每项平均值沿用同一组任务和同一权重。
++
++\paragraph{外观变化。}分别比较桌布、物体外观、干扰物三列，并记录相对于 ID 的变化。结论围绕实际改善的条件展开，附代表性成功和失败片段。
++
++\paragraph{精细操作。}对照普通放置与插接、抽屉边界操作的提升量。补充主要失败原因，如抓取偏差、边界碰撞、对齐失败、目标混淆和超时。
++
++\subsection{结果记录字段}
++每次试验保存任务、方法、checkpoint、条件、初始化编号、开始／结束时间、成功标记、结束原因与录像路径。成功率由逐次记录汇总；表格保留成功数和总次数，完成时间可在附录单独补充。
++
++\begin{figure}[htbp]
++\centering
++\panel{28mm}{OOD 场景占位\\ID \quad 桌布 \quad 物体外观 \quad 干扰物\\同一任务、同一相机、相近初始位置}
++\caption{条件对照图占位。每列标注实际改变的因素与道具编号。}
++\end{figure}
++
++\subsection{机制与视频材料}
++实机执行录像用于展示策略完成任务的过程。若展示模型内部预测，再补充预测 RGB、预测轨迹与实际执行的对应片段；分支训练方式、预测步长和采样配置随图记录。
++
++\begin{figure}[htbp]
++\centering
++\panel{31mm}{可选机制图占位\\当前 RGB／深度／mask\\预测 RGB／Track\\真实执行关键帧}
++\caption{几何和运动表示展示占位。参考 FlowWAM Figure 9 的预测与执行并排结构。}
++\end{figure}
+diff --git a/tables/real_results.tex b/tables/real_results.tex
+new file mode 100644
+index 0000000..485fd3d
+--- /dev/null
++++ b/tables/real_results.tex
+@@ -0,0 +1,28 @@
++\captionof{table}{真机主结果框架。各单元格填写成功率及成功次数（\% / $k/n$）。四列对应 ID、未见桌布、未见物体外观和未见干扰物。结果与各条件试验数待填写；末列为四条件等权均值。}
++\label{tab:real-results}
++\small
++\begin{tabularx}{\textwidth}{@{}lYccccc@{}}
++\toprule
++任务 & 方法 & ID & 桌布 OOD & 外观 OOD & 干扰物 OOD & 平均\\
++\midrule
++\multirow{3}{*}{放入抽屉}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++\midrule
++\multirow{3}{*}{放进盒子}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++\midrule
++\multirow{3}{*}{积木分类}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++\midrule
++\multirow{3}{*}{插接}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++\midrule
++\multirow{3}{*}{任务平均}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++\bottomrule
++\end{tabularx}
+diff --git a/tables/task_criteria.tex b/tables/task_criteria.tex
+new file mode 100644
+index 0000000..184f924
+--- /dev/null
++++ b/tables/task_criteria.tex
+@@ -0,0 +1,13 @@
++\captionof{table}{任务与成功标准空表。当前保留四个任务名称；道具、难度、初始条件、终点和容差在实物确认后逐项填写。}
++\label{tab:criteria}
++\small
++\begin{tabularx}{\textwidth}{@{}lYYYY@{}}
++\toprule
++任务 & 道具／难度 & 初始条件 & 完整成功标准 & 容差／阶段判据\\
++\midrule
++放入抽屉 & \pending & \pending & \pending & \pending\\[2mm]
++放进盒子 & \pending & \pending & \pending & \pending\\[2mm]
++积木分类 & \pending & \pending & \pending & \pending\\[2mm]
++插接 & \pending & \pending & \pending & \pending\\
++\bottomrule
++\end{tabularx}

@@ -1,0 +1,34 @@
+\section{真机实验：当前设定}
+\paragraph{实验目的。}以普通放置任务作为参照，考察几何和运动信息对外观变化下的稳定性、精细操作的帮助。当前关注两个问题：外观变化下是否更稳；对齐和窄容差操作的提升是否更大。实际结论由表~\ref{tab:real-results} 的测量结果填写。
+
+\paragraph{平台与输入。}现有平台为单臂 UR5e，配固定主相机和腕部相机。策略输入包括 RGB、机器人本体状态和任务指令；几何分支的数据准备包括主视角深度、前景分割及离线轨迹。相机型号、控制频率和动作接口在附录补齐。
+
+\paragraph{任务与方法。}当前四任务为：放入抽屉、放进盒子、积木分类、插接。对比方法为 OpenWAM-Alpha、X-WAM 和 MetisWAM4D。每个方法使用相同任务定义、训练示范列表和评估条件；单臂动作与相机映射记入实现记录。
+
+\paragraph{评估条件。}物体位置在训练和测试时均随机。主表包含 ID、未见桌布、未见物体外观、未见干扰物四种条件；每个 OOD 条件只改变相应因素，其余因素沿用 ID 设置。具体道具编号、位置范围和干扰物区域填入附录。
+
+\paragraph{评估预算。}当前约定每任务、每方法 20 次，单次时限 120 秒。20 次在四种条件之间的分配待确认，并在表中保留各条件样本数；示范量单独填写。
+
+\begin{figure}[htbp]
+\centering
+\begin{tabular}{@{}cc@{}}
+\begin{minipage}{.46\linewidth}\panel{22mm}{放入抽屉\\初始状态／终点}\end{minipage}&
+\begin{minipage}{.46\linewidth}\panel{22mm}{放进盒子\\初始状态／终点}\end{minipage}\\[2mm]
+\begin{minipage}{.46\linewidth}\panel{22mm}{积木分类\\初始状态／终点}\end{minipage}&
+\begin{minipage}{.46\linewidth}\panel{22mm}{插接\\初始状态／终点}\end{minipage}
+\end{tabular}
+\caption{四任务场景图占位。每个任务使用一致视角，补充可辨认的目标物体和终点状态。}
+\label{fig:tasks}
+\end{figure}
+
+\subsection{任务与方法的关系}
+\textbf{放进盒子}提供普通抓取放置参照；\textbf{放入抽屉}涉及容器边界、相对位置和局部遮挡；\textbf{积木分类}包含多物体识别、抓取与连续放置；\textbf{插接}强调相对姿态、对齐和接触。难度随容器开口、放置容差、物体数量和插接配合方式确定，具体级别在任务终点表中填写。
+
+物体外观变化保留任务语义。对于颜色分类，变化可以是同色不同纹理或外观；颜色与目标盒的对应关系保持一致。
+
+\subsection{参考材料的使用位置}
+主表参考 OpenWAM Table 8 的 ID/OOD 并列形式；泛化条件参考 X-WAM Table 8 和主页的桌布、干扰物展示，以及 Track4Action 的物体颜色变化。四任务场景图参考 WAM4D Figure 4；硬件附录参考 FlowWAM Figure 6；任务终点表参考 WAM4D Table 4。
+
+\paragraph{材料索引。}\href{https://github.com/Yutenji-Nyamu/MetisWAM4D-real-world-doc}{公开讨论与证据目录}分别保存图表索引、按论文部位整理、数值对照、OOD 口径、数据处理说明。本文框架与具体参考出处同步更新。
+
+\paragraph{模板来源。}本项目复制自干净 CVPR 模板项目。当前官方 author kit 的正文年份为 2026；项目以 CVPR 2027 为准备目标，模板来源与版本记录见 \texttt{TEMPLATE\_STATUS.md}。
