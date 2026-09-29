@@ -1,3 +1,5 @@
+> 本文件为首轮交付记录；第二轮论文重构见 [09](09_revision2_changes.md)。当前公开仓库为 [MeWAM-real-world-doc](https://github.com/Yutenji-Nyamu/MeWAM-real-world-doc)。
+
 # 2026-09-29 交付与完整变更记录
 
 ## 1. 已创建项目

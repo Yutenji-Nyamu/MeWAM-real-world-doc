@@ -1,28 +1,18 @@
-\captionof{table}{真机主结果框架。各单元格填写成功率及成功次数（\% / $k/n$）。四列对应 ID、未见桌布、未见物体外观和未见干扰物。结果与各条件试验数待填写；末列为四条件等权均值。}
+\captionof{table}{真机任务成功率（\%）。OOD 汇总未见桌布、物体外观和干扰物三类条件；平均值对四个任务等权计算。}
 \label{tab:real-results}
 \small
-\begin{tabularx}{\textwidth}{@{}lYccccc@{}}
+\setlength{\tabcolsep}{5pt}
+\renewcommand{\arraystretch}{1.12}
+\begin{tabularx}{\textwidth}{@{}l*{10}{>{\centering\arraybackslash}X}@{}}
 \toprule
-任务 & 方法 & ID & 桌布 OOD & 外观 OOD & 干扰物 OOD & 平均\\
+\multirow{2}{*}{方法} & \multicolumn{2}{c}{放入抽屉} & \multicolumn{2}{c}{放进盒子} & \multicolumn{2}{c}{积木分类} & \multicolumn{2}{c}{插接} & \multicolumn{2}{c}{平均} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(l){10-11}
+ & ID & OOD & ID & OOD & ID & OOD & ID & OOD & ID & OOD \\
 \midrule
-\multirow{3}{*}{放入抽屉}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
-&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
-&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
-\midrule
-\multirow{3}{*}{放进盒子}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
-&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
-&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
-\midrule
-\multirow{3}{*}{积木分类}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
-&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
-&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
-\midrule
-\multirow{3}{*}{插接}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
-&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
-&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
-\midrule
-\multirow{3}{*}{任务平均}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
-&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
-&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+OpenWAM-Alpha & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult \\
+X-WAM & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult \\
+\rowcolor{gray!10}
+\textbf{MetisWAM4D} & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult \\
 \bottomrule
 \end{tabularx}
+\normalsize

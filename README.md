@@ -1,8 +1,10 @@
-# MetisWAM4D real world doc
+# MeWAM real world doc
 
-真机实验的讨论记录、相关工作证据与文档框架。更新：2026-09-29。
+真机实验的论文草稿、相关工作证据与讨论记录。更新：2026-09-29，第二轮。
 
-**仅做整理信息用，非正式论文段落。** 当前结果表保留空格，实验结论由后续测量填写。
+本轮按论文部件重写正文与附录。结果论述按拟展示结论起草，数值与实拍图待补。
+
+最新入口：[Overleaf 草稿](https://www.overleaf.com/project/6abb715e006aea59b1989d4d) · [逐句参考映射](docs/08_paper_draft_sentence_map.md) · [本轮全部改动](docs/09_revision2_changes.md) · [可编辑场景图](paper/figures/real_world_scenes_20260929.drawio)
 
 ## 从这里看
 
@@ -15,12 +17,14 @@
 | [05 采集、处理与标定](docs/05_data_and_calibration.md) | UR5e 仓库已有什么？RGB-D、mask、track、标定各自做什么？ |
 | [06 当前实验设定](docs/06_experiment_plan.md) | 四任务、两个基线、四条件、一张主表、120 秒时限 |
 | [07 交付与变更记录](docs/07_delivery_changes.md) | 两个 Overleaf 项目的全部增改删、版本与云端 PDF 验收 |
+| [08 论文草稿逐句依据](docs/08_paper_draft_sentence_map.md) | 各部件先看哪些原文，每一句沿用什么结构与表达 |
+| [09 第二轮完整修改记录](docs/09_revision2_changes.md) | 本轮逐项反馈、前后对照、全部文件增改删和云端验收 |
 | [逐项数值 CSV](data/real_world_results.csv) | 便于后续画图、计算与回查的长表 |
 
 ## 文档项目
 
 - [干净 CVPR 模板项目](https://www.overleaf.com/project/6abb6f3ddbd37a2e4165260d)：面向 CVPR 2027 准备，保留当前官方 author kit。
-- [MetisWAM4D real world](https://www.overleaf.com/project/6abb715e006aea59b1989d4d)：从干净项目复制，专门存放真机框架。
+- [MetisWAM4D real world](https://www.overleaf.com/project/6abb715e006aea59b1989d4d)：正文两段、主表、场景图，以及附录设置、任务表和平台照片框。
 - [本仓库中的 LaTeX 源码快照](paper/main.tex)。工作入口以 Overleaf 为准，后续同步记入变更文件。
 
 当前官方 [cvpr-org/author-kit](https://github.com/cvpr-org/author-kit) 的正文年份仍为 **CVPR 2026**；核对提交 `291758547e923160eb4d37079b7b9f0dfce82355`。2027 Author Guidelines 页面在本次核查时显示 Page not found。项目名称表明准备目标，模板版本另行记录。

@@ -1,0 +1,122 @@
+<?xml version='1.0' encoding='utf-8'?>
+<mxfile host="app.diagrams.net" agent="draw.io" version="29.3.0">
+  <diagram id="real-scenes-round2" name="01 Real-world tasks and OOD">
+    <mxGraphModel dx="1200" dy="650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1200" pageHeight="650" math="0" shadow="0" background="#ffffff">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="header-id" value="In Domain" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=24;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="0" y="0" width="968" height="34" />
+        </mxCell>
+        <mxCell id="header-ood" value="Out of Domain" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=24;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="980" y="0" width="218" height="34" />
+        </mxCell>
+        <mxCell id="drawer-panel" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#DDBB99;strokeWidth=1.2;dashed=1;dashPattern=4 3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2" y="42" width="962" height="144" />
+        </mxCell>
+        <mxCell id="drawer-title" value="Drawer: Place the object into the drawer" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=20;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="16" y="47" width="934" height="28" />
+        </mxCell>
+        <mxCell id="drawer-frame-1" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="21" y="81" width="174" height="96" />
+        </mxCell>
+        <mxCell id="drawer-frame-2" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="206" y="81" width="174" height="96" />
+        </mxCell>
+        <mxCell id="drawer-frame-3" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="391" y="81" width="174" height="96" />
+        </mxCell>
+        <mxCell id="drawer-frame-4" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="576" y="81" width="174" height="96" />
+        </mxCell>
+        <mxCell id="drawer-frame-5" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="761" y="81" width="174" height="96" />
+        </mxCell>
+        <mxCell id="box-panel" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#8EAFCA;strokeWidth=1.2;dashed=1;dashPattern=4 3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2" y="193" width="962" height="144" />
+        </mxCell>
+        <mxCell id="box-title" value="Box: Place the object into the box" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=20;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="16" y="198" width="934" height="28" />
+        </mxCell>
+        <mxCell id="box-frame-1" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="21" y="232" width="174" height="96" />
+        </mxCell>
+        <mxCell id="box-frame-2" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="206" y="232" width="174" height="96" />
+        </mxCell>
+        <mxCell id="box-frame-3" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="391" y="232" width="174" height="96" />
+        </mxCell>
+        <mxCell id="box-frame-4" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="576" y="232" width="174" height="96" />
+        </mxCell>
+        <mxCell id="box-frame-5" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="761" y="232" width="174" height="96" />
+        </mxCell>
+        <mxCell id="sort-panel" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#AFC292;strokeWidth=1.2;dashed=1;dashPattern=4 3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2" y="344" width="962" height="144" />
+        </mxCell>
+        <mxCell id="sort-title" value="Block Sorting: Sort all blocks into color-matched containers" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=20;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="16" y="349" width="934" height="28" />
+        </mxCell>
+        <mxCell id="sort-frame-1" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="21" y="383" width="174" height="96" />
+        </mxCell>
+        <mxCell id="sort-frame-2" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="206" y="383" width="174" height="96" />
+        </mxCell>
+        <mxCell id="sort-frame-3" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="391" y="383" width="174" height="96" />
+        </mxCell>
+        <mxCell id="sort-frame-4" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="576" y="383" width="174" height="96" />
+        </mxCell>
+        <mxCell id="sort-frame-5" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="761" y="383" width="174" height="96" />
+        </mxCell>
+        <mxCell id="insertion-panel" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#B5A0D4;strokeWidth=1.2;dashed=1;dashPattern=4 3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="2" y="495" width="962" height="144" />
+        </mxCell>
+        <mxCell id="insertion-title" value="Insertion: Insert the plug into the socket" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=20;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="16" y="500" width="934" height="28" />
+        </mxCell>
+        <mxCell id="insertion-frame-1" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="21" y="534" width="174" height="96" />
+        </mxCell>
+        <mxCell id="insertion-frame-2" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="206" y="534" width="174" height="96" />
+        </mxCell>
+        <mxCell id="insertion-frame-3" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="391" y="534" width="174" height="96" />
+        </mxCell>
+        <mxCell id="insertion-frame-4" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="576" y="534" width="174" height="96" />
+        </mxCell>
+        <mxCell id="insertion-frame-5" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="761" y="534" width="174" height="96" />
+        </mxCell>
+        <mxCell id="ood-panel" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#DDBB99;strokeWidth=1.2;dashed=1;dashPattern=4 3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="975" y="42" width="223" height="597" />
+        </mxCell>
+        <mxCell id="ood-cloth-title" value="Unseen Tablecloth" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=20;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="984" y="49" width="205" height="28" />
+        </mxCell>
+        <mxCell id="ood-cloth-frame" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="990" y="85" width="193" height="140" />
+        </mxCell>
+        <mxCell id="ood-appearance-title" value="Unseen Appearance" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=20;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="984" y="247" width="205" height="28" />
+        </mxCell>
+        <mxCell id="ood-appearance-frame" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="990" y="283" width="193" height="140" />
+        </mxCell>
+        <mxCell id="ood-distractor-title" value="Unseen Distractors" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=20;fontStyle=3;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="984" y="445" width="205" height="28" />
+        </mxCell>
+        <mxCell id="ood-distractor-frame" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
+          <mxGeometry as="geometry" x="990" y="481" width="193" height="140" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

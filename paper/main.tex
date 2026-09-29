@@ -1,24 +1,28 @@
-% Working document using the current official CVPR author kit.
+% Real-world paper fragments; official CVPR layout, Chinese working draft.
 \documentclass[10pt,twocolumn,letterpaper]{article}
 \usepackage[pagenumbers]{cvpr}
 \input{preamble}
-\def\paperID{working-notes}
+\def\paperID{working-draft}
 \def\confName{CVPR}
 \def\confYear{2027}
-\title{MetisWAM4D real world}
-\author{实验设置与材料框架\\2026 年 9 月 29 日}
+\title{MetisWAM4D: Real-World Experiments}
+\author{\small 真机实验部分草稿：结果论述待实测核对，数值与实拍图待补。}
 \begin{document}
 \maketitle
-\begin{center}
-\fcolorbox{cvprblue}{blue!4}{\parbox{0.92\columnwidth}{\centering\bfseries
-仅做整理信息用，非正式论文段落。}}
-\end{center}
+\raggedbottom
+\begin{figure*}[!b]
+\centering
+\input{tables/real_results}
+\vspace{9pt}
+\includegraphics[width=\textwidth]{figures/real_world_scenes_20260929.pdf}
+\captionof{figure}{真机任务执行过程与评估场景。左侧为四个任务的执行序列，右侧为未见桌布、物体外观和干扰物三类 OOD 场景。}
+\label{fig:tasks}
+\end{figure*}
+\section{真机实验}
 \input{sec/real_world}
-\clearpage
 \input{sec/results}
 \clearpage
 \appendix
+\balance
 \input{sec/appendix_protocol}
-\clearpage
-\input{sec/appendix_data}
 \end{document}

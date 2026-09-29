@@ -1,0 +1,66 @@
+{
+  "date": "2026-09-29",
+  "overleaf_project": "https://www.overleaf.com/project/6abb715e006aea59b1989d4d",
+  "overleaf_base": "62ffd001ea243332887e0eeda21bba135dbf188b",
+  "overleaf_commit": "a13185d5921e942b17e409bf88871ad719f76526",
+  "overleaf_changes": [
+    "M\tREADME.md",
+    "A\tfigures/real_world_scenes_20260929.drawio",
+    "A\tfigures/real_world_scenes_20260929.pdf",
+    "M\tmain.tex",
+    "M\tpreamble.tex",
+    "D\tsec/appendix_data.tex",
+    "M\tsec/appendix_protocol.tex",
+    "M\tsec/real_world.tex",
+    "M\tsec/results.tex",
+    "M\ttables/real_results.tex",
+    "M\ttables/task_criteria.tex"
+  ],
+  "overleaf_counts": {
+    "A": 2,
+    "M": 8,
+    "D": 1
+  },
+  "clean_template_counts": {
+    "A": 0,
+    "M": 0,
+    "D": 0
+  },
+  "other_overleaf_counts": {
+    "A": 0,
+    "M": 0,
+    "D": 0
+  },
+  "cloud_pdf": {
+    "pages": 2,
+    "bytes": 157972,
+    "sha256": "fe0c0826902ff900a0d8347adcfbc7c15e524812949a7a6d0ba68b848fc51b3d",
+    "errors": 0,
+    "warnings": 0,
+    "info": 0,
+    "all_pages_visually_reviewed": true
+  },
+  "scene_figure": {
+    "native_objects": 37,
+    "blank_image_cells": 23,
+    "exporter": "draw.io desktop 29.3.0",
+    "page_index": 1,
+    "border_px": 2,
+    "raster_images_in_pdf": 0,
+    "pdf_sha256": "43c68a0c3a3147eb9cb70b7c6c47fbb0384911e612c83fa2e86b4b96da73f952"
+  },
+  "public_repo": "https://github.com/Yutenji-Nyamu/MeWAM-real-world-doc",
+  "visibility": "public",
+  "public_repo_description": "unchanged",
+  "paper_mirror_files": 13,
+  "checks": [
+    "figure/table numbering",
+    "cross references",
+    "30 empty result cells",
+    "4 task instruction rows",
+    "23 empty photo cells",
+    "paper mirror bytes",
+    "removed prose absent",
+    "template style unchanged"
+  ]
+}

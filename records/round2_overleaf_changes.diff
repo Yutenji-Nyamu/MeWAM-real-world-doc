@@ -1,0 +1,469 @@
+diff --git a/README.md b/README.md
+index d1e546d..3f664ad 100644
+--- a/README.md
++++ b/README.md
+@@ -1,14 +1,10 @@
+ # MetisWAM4D real world
+ 
+-仅做整理信息用，非正式论文段落。
++真机实验的论文片段草稿。使用 XeLaTeX 编译 `main.tex`。
+ 
+-- Overleaf: https://www.overleaf.com/project/6abb715e006aea59b1989d4d
+-- Discussion and evidence: https://github.com/Yutenji-Nyamu/MetisWAM4D-real-world-doc
+-- Compiler: XeLaTeX; TeX Live 2026; main document: main.tex.
+-- Main text: sec/real_world.tex and sec/results.tex.
+-- Main results: tables/real_results.tex (four tasks × three methods; ID plus three OOD conditions).
+-- Appendix: sec/appendix_protocol.tex, sec/appendix_data.tex, tables/task_criteria.tex.
+-- All measurements and fixture-dependent criteria are placeholders.
+-- Current trial budget wording: 20 trials per task/method, 120 seconds; allocation across conditions remains to be specified.
++- 正文：简短设置与结果段落、三方法 × 四任务的 ID/OOD 结果表、任务执行与 OOD 场景图。
++- 附录：机器人平台、任务与示范、OOD 条件、评估协议、任务指令表和平台照片框。
++- 结果文字按当前拟展示结论起草；数值与实拍图在后续实验中补齐。
++- `figures/real_world_scenes_20260929.drawio` 为原生可编辑图，PDF 为对应矢量导出。
+ 
+-The project was copied from the clean CVPR project. The currently published official kit remains labeled CVPR 2026; see TEMPLATE_STATUS.md for provenance. This document targets CVPR 2027 preparation.
++逐句参考与全部改动记录保存在 [讨论仓库](https://github.com/Yutenji-Nyamu/MeWAM-real-world-doc)。模板版本见 `TEMPLATE_STATUS.md`。
+diff --git a/figures/real_world_scenes_20260929.drawio b/figures/real_world_scenes_20260929.drawio
+new file mode 100644
+index 0000000..ddb2cbb
+--- /dev/null
++++ b/figures/real_world_scenes_20260929.drawio
+@@ -0,0 +1,122 @@
++<?xml version='1.0' encoding='utf-8'?>
++<mxfile host="app.diagrams.net" agent="draw.io" version="29.3.0">
++  <diagram id="real-scenes-round2" name="01 Real-world tasks and OOD">
++    <mxGraphModel dx="1200" dy="650" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="1200" pageHeight="650" math="0" shadow="0" background="#ffffff">
++      <root>
++        <mxCell id="0" />
++        <mxCell id="1" parent="0" />
++        <mxCell id="header-id" value="In Domain" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=24;fontStyle=3;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="0" y="0" width="968" height="34" />
++        </mxCell>
++        <mxCell id="header-ood" value="Out of Domain" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=24;fontStyle=3;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="980" y="0" width="218" height="34" />
++        </mxCell>
++        <mxCell id="drawer-panel" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#DDBB99;strokeWidth=1.2;dashed=1;dashPattern=4 3;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="2" y="42" width="962" height="144" />
++        </mxCell>
++        <mxCell id="drawer-title" value="Drawer: Place the object into the drawer" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=20;fontStyle=3;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="16" y="47" width="934" height="28" />
++        </mxCell>
++        <mxCell id="drawer-frame-1" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="21" y="81" width="174" height="96" />
++        </mxCell>
++        <mxCell id="drawer-frame-2" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="206" y="81" width="174" height="96" />
++        </mxCell>
++        <mxCell id="drawer-frame-3" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="391" y="81" width="174" height="96" />
++        </mxCell>
++        <mxCell id="drawer-frame-4" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="576" y="81" width="174" height="96" />
++        </mxCell>
++        <mxCell id="drawer-frame-5" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="761" y="81" width="174" height="96" />
++        </mxCell>
++        <mxCell id="box-panel" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#8EAFCA;strokeWidth=1.2;dashed=1;dashPattern=4 3;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="2" y="193" width="962" height="144" />
++        </mxCell>
++        <mxCell id="box-title" value="Box: Place the object into the box" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=20;fontStyle=3;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="16" y="198" width="934" height="28" />
++        </mxCell>
++        <mxCell id="box-frame-1" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="21" y="232" width="174" height="96" />
++        </mxCell>
++        <mxCell id="box-frame-2" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="206" y="232" width="174" height="96" />
++        </mxCell>
++        <mxCell id="box-frame-3" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="391" y="232" width="174" height="96" />
++        </mxCell>
++        <mxCell id="box-frame-4" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="576" y="232" width="174" height="96" />
++        </mxCell>
++        <mxCell id="box-frame-5" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="761" y="232" width="174" height="96" />
++        </mxCell>
++        <mxCell id="sort-panel" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#AFC292;strokeWidth=1.2;dashed=1;dashPattern=4 3;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="2" y="344" width="962" height="144" />
++        </mxCell>
++        <mxCell id="sort-title" value="Block Sorting: Sort all blocks into color-matched containers" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=20;fontStyle=3;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="16" y="349" width="934" height="28" />
++        </mxCell>
++        <mxCell id="sort-frame-1" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="21" y="383" width="174" height="96" />
++        </mxCell>
++        <mxCell id="sort-frame-2" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="206" y="383" width="174" height="96" />
++        </mxCell>
++        <mxCell id="sort-frame-3" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="391" y="383" width="174" height="96" />
++        </mxCell>
++        <mxCell id="sort-frame-4" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="576" y="383" width="174" height="96" />
++        </mxCell>
++        <mxCell id="sort-frame-5" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="761" y="383" width="174" height="96" />
++        </mxCell>
++        <mxCell id="insertion-panel" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#B5A0D4;strokeWidth=1.2;dashed=1;dashPattern=4 3;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="2" y="495" width="962" height="144" />
++        </mxCell>
++        <mxCell id="insertion-title" value="Insertion: Insert the plug into the socket" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=20;fontStyle=3;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="16" y="500" width="934" height="28" />
++        </mxCell>
++        <mxCell id="insertion-frame-1" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="21" y="534" width="174" height="96" />
++        </mxCell>
++        <mxCell id="insertion-frame-2" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="206" y="534" width="174" height="96" />
++        </mxCell>
++        <mxCell id="insertion-frame-3" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="391" y="534" width="174" height="96" />
++        </mxCell>
++        <mxCell id="insertion-frame-4" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="576" y="534" width="174" height="96" />
++        </mxCell>
++        <mxCell id="insertion-frame-5" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="761" y="534" width="174" height="96" />
++        </mxCell>
++        <mxCell id="ood-panel" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#DDBB99;strokeWidth=1.2;dashed=1;dashPattern=4 3;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="975" y="42" width="223" height="597" />
++        </mxCell>
++        <mxCell id="ood-cloth-title" value="Unseen Tablecloth" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=20;fontStyle=3;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="984" y="49" width="205" height="28" />
++        </mxCell>
++        <mxCell id="ood-cloth-frame" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="990" y="85" width="193" height="140" />
++        </mxCell>
++        <mxCell id="ood-appearance-title" value="Unseen Appearance" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=20;fontStyle=3;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="984" y="247" width="205" height="28" />
++        </mxCell>
++        <mxCell id="ood-appearance-frame" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="990" y="283" width="193" height="140" />
++        </mxCell>
++        <mxCell id="ood-distractor-title" value="Unseen Distractors" style="text;html=0;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;strokeColor=none;fillColor=none;fontFamily=Times New Roman;fontColor=#111111;fontSize=20;fontStyle=3;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="984" y="445" width="205" height="28" />
++        </mxCell>
++        <mxCell id="ood-distractor-frame" value="" style="rounded=0;whiteSpace=wrap;html=0;fillColor=#ffffff;strokeColor=#C3C3C3;strokeWidth=0.75;" vertex="1" parent="1">
++          <mxGeometry as="geometry" x="990" y="481" width="193" height="140" />
++        </mxCell>
++      </root>
++    </mxGraphModel>
++  </diagram>
++</mxfile>
+\ No newline at end of file
+diff --git a/figures/real_world_scenes_20260929.pdf b/figures/real_world_scenes_20260929.pdf
+new file mode 100644
+index 0000000..42ec3cd
+Binary files /dev/null and b/figures/real_world_scenes_20260929.pdf differ
+diff --git a/main.tex b/main.tex
+index e0a4d51..45a6681 100644
+--- a/main.tex
++++ b/main.tex
+@@ -1,24 +1,28 @@
+-% Working document using the current official CVPR author kit.
++% Real-world paper fragments; official CVPR layout, Chinese working draft.
+ \documentclass[10pt,twocolumn,letterpaper]{article}
+ \usepackage[pagenumbers]{cvpr}
+ \input{preamble}
+-\def\paperID{working-notes}
++\def\paperID{working-draft}
+ \def\confName{CVPR}
+ \def\confYear{2027}
+-\title{MetisWAM4D real world}
+-\author{实验设置与材料框架\\2026 年 9 月 29 日}
++\title{MetisWAM4D: Real-World Experiments}
++\author{\small 真机实验部分草稿：结果论述待实测核对，数值与实拍图待补。}
+ \begin{document}
+ \maketitle
+-\begin{center}
+-\fcolorbox{cvprblue}{blue!4}{\parbox{0.92\columnwidth}{\centering\bfseries
+-仅做整理信息用，非正式论文段落。}}
+-\end{center}
++\raggedbottom
++\begin{figure*}[!b]
++\centering
++\input{tables/real_results}
++\vspace{9pt}
++\includegraphics[width=\textwidth]{figures/real_world_scenes_20260929.pdf}
++\captionof{figure}{真机任务执行过程与评估场景。左侧为四个任务的执行序列，右侧为未见桌布、物体外观和干扰物三类 OOD 场景。}
++\label{fig:tasks}
++\end{figure*}
++\section{真机实验}
+ \input{sec/real_world}
+-\clearpage
+ \input{sec/results}
+ \clearpage
+ \appendix
++\balance
+ \input{sec/appendix_protocol}
+-\clearpage
+-\input{sec/appendix_data}
+ \end{document}
+diff --git a/preamble.tex b/preamble.tex
+index 2e6c6c2..ac4b3fb 100644
+--- a/preamble.tex
++++ b/preamble.tex
+@@ -1,11 +1,9 @@
+ \usepackage[UTF8,fontset=fandol,scheme=plain]{ctex}
+-\usepackage{graphicx,booktabs,tabularx,array,multirow}
+-\usepackage{cuted,caption}
++\usepackage{graphicx,booktabs,tabularx,array,multirow,colortbl}
++\usepackage{stfloats,caption,balance,float}
+ \captionsetup{hypcap=false}
+ \definecolor{cvprblue}{rgb}{0.21,0.49,0.74}
+ \usepackage[breaklinks,colorlinks,allcolors=cvprblue]{hyperref}
+ \newcolumntype{Y}{>{\raggedright\arraybackslash}X}
+-\newcommand{\pending}{\textcolor{cvprblue}{待补}}
+ \newcommand{\blankresult}{\textemdash}
+-\newcommand{\panel}[2]{\fbox{\parbox[c][#1][c]{0.93\linewidth}{\centering\small #2}}}
+ \setlength{\emergencystretch}{1em}
+diff --git a/sec/appendix_data.tex b/sec/appendix_data.tex
+deleted file mode 100644
+index bcc16e0..0000000
+--- a/sec/appendix_data.tex
++++ /dev/null
+@@ -1,43 +0,0 @@
+-\section{硬件、数据与展示产物}
+-\subsection{硬件与控制接口}
+-\begin{table}[htbp]
+-\centering\small
+-\caption{现有基础设施及待补配置。}
+-\begin{tabularx}{\linewidth}{@{}lY@{}}
+-\toprule
+-项目 & 当前记录\\\midrule
+-机器人 & 单臂 UR5e\\
+-相机 & 固定主视角、腕部视角；型号\pending\\
+-深度 & 拟保存主视角 RGB 对齐深度\\
+-机器人状态 & 关节位置／速度、TCP 位姿\\
+-夹爪 & 指令状态；具体硬件\pending\\
+-采集方式 & Freedrive 示范；实际采样率\pending\\
+-动作接口 & 单臂映射与执行频率\pending\\
+-推理硬件 & GPU、延迟与动作块长度\pending\\
+-\bottomrule
+-\end{tabularx}
+-\end{table}
+-
+-\begin{figure}[htbp]
+-\centering
+-\panel{31mm}{硬件照片占位\\标注 UR5e、夹爪、固定相机、腕部相机\\显示桌面工作区域与相机朝向}
+-\caption{硬件与视角布置。参考 FlowWAM Figure 6 和 OpenWAM Figure 18 的标注方式。}
+-\end{figure}
+-
+-\subsection{原始记录与离线处理}
+-已有采集代码保存双视角 RGB、RTDE 状态、夹爪指令状态、episode 元数据和同步索引。新增记录项包括主视角深度、深度单位、RGB--depth 对齐方式、相机内参、相机帧号与时间戳。
+-
+-离线处理生成前景 mask、机器人／物体角色标签，以及结合 RGB 光流和深度得到的 Track UVD。处理版本、有效像素比例和异常帧随 episode 保存。固定主视角作为首选 Track 视角；腕部视角提供 RGB 观察。
+-
+-\subsection{相机参数与标定路径}
+-RealSense SDK 提供出厂内参、同一相机内部的彩色／深度外参和深度尺度；这些参数可直接读取保存。相机到机器人基座的变换属于另一层参数，涉及世界坐标点云融合、机器人投影或移动相机运动补偿时再配置。当前以固定相机中的 UVD 表示组织几何数据。
+-
+-\subsection{训练、部署和展示}
+-分别记录训练监督、部署输入和生成输出：训练可以使用未来深度与轨迹；部署只使用当前可获得的观察；预测分支输出作为内部表示和可选可视化。记录视频、Track、动作专家的训练范围，以及推理时各分支的实际采样配置。
+-
+-实机执行录像、模型生成视频和轨迹预测分别保存并标注。展示策略执行时使用实机录像；展示预测质量时使用对应的预测和参考片段。
+-
+-\subsection{交付材料清单}
+-主文保留四任务场景图和一张含 OOD 的主结果表。附录包括硬件照片、任务终点表、随机化范围、示范／评估协议和数据处理说明。可选材料包括 OOD 对照图、预测与执行序列、失败案例和推理开销。
+-
+-\paragraph{基础设施版本。}\href{https://github.com/Yutenji-Nyamu/UR5e-RoboTwin-Real}{UR5e-RoboTwin-Real}，本次只读核对的提交为 \texttt{097922c}。该版本的相机采集流为 RGB，深度记录列为本次方案的待实现项。
+diff --git a/sec/appendix_protocol.tex b/sec/appendix_protocol.tex
+index b34366a..bfb6865 100644
+--- a/sec/appendix_protocol.tex
++++ b/sec/appendix_protocol.tex
+@@ -1,23 +1,24 @@
+-\section{任务、随机化与评估细节}
+-\begin{strip}
+-\centering
+-\input{tables/task_criteria}
+-\end{strip}
+-\subsection{示范与训练设置}
+-每个任务的示范量为\pending；记录 episode 列表、训练分区、相机视角与帧率、动作表示和归一化方式。所有方法共享示范清单；各方法的预训练权重、微调范围、训练步数、batch size 和随机种子填入复现记录。
++\section{真机实验设置}
++\label{sec:real-appendix}
+ 
+-\subsection{随机化支持范围}
+-\textbf{位置：}训练和评估均在指定桌面区域内随机，范围、朝向和采样方式为\pending。\textbf{桌布：}训练桌布集合为\pending，OOD 使用的留出桌布编号为\pending。\textbf{物体外观：}目标物体的身份、颜色／纹理版本和保持不变的语义为\pending。\textbf{干扰物：}训练场景配置为\pending，测试留出的干扰物种类、数量和区域为\pending。
++\paragraph{机器人平台。}
++实验平台由 UR5e 机械臂、夹爪、固定主相机和腕部相机构成，如图~\ref{fig:hardware} 所示。主相机提供工作空间的 RGB-D 观测，腕部相机提供近距离 RGB 观测；机器人本体状态通过 RTDE 接口读取。策略根据视觉观测、本体状态与任务指令预测动作，并闭环执行任务。
+ 
+-每次 OOD 试验只改变一个因素，并复用相同的初始化编号供三个方法比较。道具变化以照片和 ID 记录。
++\begin{figure}[H]
++\centering
++\setlength{\fboxsep}{0pt}
++\fcolorbox{gray!55}{white}{\rule{0pt}{0.72\linewidth}\rule{0.985\linewidth}{0pt}}
++\caption{真机实验平台，包括 UR5e 机械臂、夹爪、固定与腕部相机，以及四个任务的操作物体和工作空间。}
++\label{fig:hardware}
++\end{figure}
+ 
+-\subsection{试验数、时限与汇总}
+-当前约定每任务、每方法 20 次，单次 120 秒；四条件分配为\pending。若每条件 20 次，四任务、三方法、四条件共 960 次；若四条件合计 20 次，共 240 次。最终使用的口径在采集清单和主表中保持一致。
++\paragraph{任务与示范。}
++四个任务及其语言指令列于表~\ref{tab:task-instructions}。放入抽屉与放进盒子评估相对容器的抓取放置，积木分类要求连续完成多物体操作，插接要求准确的相对姿态与接触对齐。我们使用遥操作示范对各方法进行微调；同一任务的训练数据在所有方法之间共享。训练与评估时均随机化物体的初始位置。
+ 
+-成功率 $\mathrm{SR}=N_{\mathrm{success}}/N_{\mathrm{trial}}$。每次试验使用表~\ref{tab:criteria} 的完整终点判据。保留原始 $k/n$，并按任务等权汇总；阶段完成情况作为诊断字段单独记录。
++\input{tables/task_criteria}
+ 
+-\subsection{结束条件与失败类型}
+-达到完整终点时记录成功和完成时间；到达 120 秒时记录超时。人工中止、设备异常等事件分别登记，并在汇总前依据统一规则处理。失败类型包括抓取失败、放置越界、对齐失败、碰撞、目标混淆与超时，按实际试验补充。
++\paragraph{分布外评估。}
++ID 评估沿用训练中的物体与场景配置。OOD 评估分别更换训练中未见的桌布、目标物体外观，或加入未见干扰物，每次只改变一种因素，并保持任务指令与操作目标一致。对于积木分类，外观变化保留颜色类别与容器的对应关系。表~\ref{tab:real-results} 的 OOD 列汇总三类变化条件的成功率。
+ 
+-\subsection{本附录对应的参考}
+-Efficient-WAM 在正文 \S4.3 写示范量、试验数、时限和五任务判据；WAM4D Table 4 列任务分步判据；OpenWAM Appendix C 提供硬件图、任务序列和终点定义。本项目以一张任务表加简短协议文字组织这些材料。
++\paragraph{评估协议。}
++每个任务、每种方法进行 20 次评估，单次时限为 120 秒。成功率以完整任务的完成比例计算。放置任务要求物体稳定置于指定抽屉或盒子中；积木分类要求所有积木进入对应容器；插接要求插接件完全插入目标孔位。
+diff --git a/sec/real_world.tex b/sec/real_world.tex
+index 6b97d23..fc21161 100644
+--- a/sec/real_world.tex
++++ b/sec/real_world.tex
+@@ -1,34 +1,2 @@
+-\section{真机实验：当前设定}
+-\paragraph{实验目的。}以普通放置任务作为参照，考察几何和运动信息对外观变化下的稳定性、精细操作的帮助。当前关注两个问题：外观变化下是否更稳；对齐和窄容差操作的提升是否更大。实际结论由表~\ref{tab:real-results} 的测量结果填写。
+-
+-\paragraph{平台与输入。}现有平台为单臂 UR5e，配固定主相机和腕部相机。策略输入包括 RGB、机器人本体状态和任务指令；几何分支的数据准备包括主视角深度、前景分割及离线轨迹。相机型号、控制频率和动作接口在附录补齐。
+-
+-\paragraph{任务与方法。}当前四任务为：放入抽屉、放进盒子、积木分类、插接。对比方法为 OpenWAM-Alpha、X-WAM 和 MetisWAM4D。每个方法使用相同任务定义、训练示范列表和评估条件；单臂动作与相机映射记入实现记录。
+-
+-\paragraph{评估条件。}物体位置在训练和测试时均随机。主表包含 ID、未见桌布、未见物体外观、未见干扰物四种条件；每个 OOD 条件只改变相应因素，其余因素沿用 ID 设置。具体道具编号、位置范围和干扰物区域填入附录。
+-
+-\paragraph{评估预算。}当前约定每任务、每方法 20 次，单次时限 120 秒。20 次在四种条件之间的分配待确认，并在表中保留各条件样本数；示范量单独填写。
+-
+-\begin{figure}[htbp]
+-\centering
+-\begin{tabular}{@{}cc@{}}
+-\begin{minipage}{.46\linewidth}\panel{22mm}{放入抽屉\\初始状态／终点}\end{minipage}&
+-\begin{minipage}{.46\linewidth}\panel{22mm}{放进盒子\\初始状态／终点}\end{minipage}\\[2mm]
+-\begin{minipage}{.46\linewidth}\panel{22mm}{积木分类\\初始状态／终点}\end{minipage}&
+-\begin{minipage}{.46\linewidth}\panel{22mm}{插接\\初始状态／终点}\end{minipage}
+-\end{tabular}
+-\caption{四任务场景图占位。每个任务使用一致视角，补充可辨认的目标物体和终点状态。}
+-\label{fig:tasks}
+-\end{figure}
+-
+-\subsection{任务与方法的关系}
+-\textbf{放进盒子}提供普通抓取放置参照；\textbf{放入抽屉}涉及容器边界、相对位置和局部遮挡；\textbf{积木分类}包含多物体识别、抓取与连续放置；\textbf{插接}强调相对姿态、对齐和接触。难度随容器开口、放置容差、物体数量和插接配合方式确定，具体级别在任务终点表中填写。
+-
+-物体外观变化保留任务语义。对于颜色分类，变化可以是同色不同纹理或外观；颜色与目标盒的对应关系保持一致。
+-
+-\subsection{参考材料的使用位置}
+-主表参考 OpenWAM Table 8 的 ID/OOD 并列形式；泛化条件参考 X-WAM Table 8 和主页的桌布、干扰物展示，以及 Track4Action 的物体颜色变化。四任务场景图参考 WAM4D Figure 4；硬件附录参考 FlowWAM Figure 6；任务终点表参考 WAM4D Table 4。
+-
+-\paragraph{材料索引。}\href{https://github.com/Yutenji-Nyamu/MetisWAM4D-real-world-doc}{公开讨论与证据目录}分别保存图表索引、按论文部位整理、数值对照、OOD 口径、数据处理说明。本文框架与具体参考出处同步更新。
+-
+-\paragraph{模板来源。}本项目复制自干净 CVPR 模板项目。当前官方 author kit 的正文年份为 2026；项目以 CVPR 2027 为准备目标，模板来源与版本记录见 \texttt{TEMPLATE\_STATUS.md}。
++\paragraph{实验设置。}
++我们在 UR5e 单臂平台上评估四个真机任务：放入抽屉、放进盒子、积木分类和插接，覆盖抓取放置、多物体操作与精细对齐（图~\ref{fig:tasks}）。所有方法使用相同的任务示范进行微调，并在分布内（ID）与分布外（OOD）条件下评估；OOD 包括未见桌布、物体外观和干扰物。我们将 MetisWAM4D 与 OpenWAM-Alpha、X-WAM 比较，报告任务成功率。设置见附录~\ref{sec:real-appendix}。
+diff --git a/sec/results.tex b/sec/results.tex
+index 1491461..a2b2079 100644
+--- a/sec/results.tex
++++ b/sec/results.tex
+@@ -1,30 +1,2 @@
+-\section{结果与展示材料}
+-\begin{strip}
+-\centering
+-\input{tables/real_results}
+-\end{strip}
+-
+-\subsection{正文论述的填空顺序}
+-\paragraph{总体表现。}填写 ID 及三类 OOD 的各任务成功率，随后报告任务平均值与相对两个基线的百分点差。每项平均值沿用同一组任务和同一权重。
+-
+-\paragraph{外观变化。}分别比较桌布、物体外观、干扰物三列，并记录相对于 ID 的变化。结论围绕实际改善的条件展开，附代表性成功和失败片段。
+-
+-\paragraph{精细操作。}对照普通放置与插接、抽屉边界操作的提升量。补充主要失败原因，如抓取偏差、边界碰撞、对齐失败、目标混淆和超时。
+-
+-\subsection{结果记录字段}
+-每次试验保存任务、方法、checkpoint、条件、初始化编号、开始／结束时间、成功标记、结束原因与录像路径。成功率由逐次记录汇总；表格保留成功数和总次数，完成时间可在附录单独补充。
+-
+-\begin{figure}[htbp]
+-\centering
+-\panel{28mm}{OOD 场景占位\\ID \quad 桌布 \quad 物体外观 \quad 干扰物\\同一任务、同一相机、相近初始位置}
+-\caption{条件对照图占位。每列标注实际改变的因素与道具编号。}
+-\end{figure}
+-
+-\subsection{机制与视频材料}
+-实机执行录像用于展示策略完成任务的过程。若展示模型内部预测，再补充预测 RGB、预测轨迹与实际执行的对应片段；分支训练方式、预测步长和采样配置随图记录。
+-
+-\begin{figure}[htbp]
+-\centering
+-\panel{31mm}{可选机制图占位\\当前 RGB／深度／mask\\预测 RGB／Track\\真实执行关键帧}
+-\caption{几何和运动表示展示占位。参考 FlowWAM Figure 9 的预测与执行并排结构。}
+-\end{figure}
++\paragraph{实验结果。}
++如表~\ref{tab:real-results} 所示，MetisWAM4D 在四个任务上取得最高的平均成功率。在未见桌布、物体外观和干扰物下，MetisWAM4D 保持更高的成功率，表现出更强的视觉泛化能力。相比一般放置任务，需要准确对齐的插接任务提升更明显，体现了任务相关的几何与运动信息对精细操作的作用。
+diff --git a/tables/real_results.tex b/tables/real_results.tex
+index 485fd3d..b1f868b 100644
+--- a/tables/real_results.tex
++++ b/tables/real_results.tex
+@@ -1,28 +1,18 @@
+-\captionof{table}{真机主结果框架。各单元格填写成功率及成功次数（\% / $k/n$）。四列对应 ID、未见桌布、未见物体外观和未见干扰物。结果与各条件试验数待填写；末列为四条件等权均值。}
++\captionof{table}{真机任务成功率（\%）。OOD 汇总未见桌布、物体外观和干扰物三类条件；平均值对四个任务等权计算。}
+ \label{tab:real-results}
+ \small
+-\begin{tabularx}{\textwidth}{@{}lYccccc@{}}
++\setlength{\tabcolsep}{5pt}
++\renewcommand{\arraystretch}{1.12}
++\begin{tabularx}{\textwidth}{@{}l*{10}{>{\centering\arraybackslash}X}@{}}
+ \toprule
+-任务 & 方法 & ID & 桌布 OOD & 外观 OOD & 干扰物 OOD & 平均\\
++\multirow{2}{*}{方法} & \multicolumn{2}{c}{放入抽屉} & \multicolumn{2}{c}{放进盒子} & \multicolumn{2}{c}{积木分类} & \multicolumn{2}{c}{插接} & \multicolumn{2}{c}{平均} \\
++\cmidrule(lr){2-3}\cmidrule(lr){4-5}\cmidrule(lr){6-7}\cmidrule(lr){8-9}\cmidrule(l){10-11}
++ & ID & OOD & ID & OOD & ID & OOD & ID & OOD & ID & OOD \\
+ \midrule
+-\multirow{3}{*}{放入抽屉}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+-&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+-&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+-\midrule
+-\multirow{3}{*}{放进盒子}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+-&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+-&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+-\midrule
+-\multirow{3}{*}{积木分类}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+-&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+-&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+-\midrule
+-\multirow{3}{*}{插接}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+-&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+-&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+-\midrule
+-\multirow{3}{*}{任务平均}&OpenWAM-Alpha&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+-&X-WAM&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
+-&MetisWAM4D&\blankresult&\blankresult&\blankresult&\blankresult&\blankresult\\
++OpenWAM-Alpha & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult \\
++X-WAM & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult \\
++\rowcolor{gray!10}
++\textbf{MetisWAM4D} & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult & \blankresult \\
+ \bottomrule
+ \end{tabularx}
++\normalsize
+diff --git a/tables/task_criteria.tex b/tables/task_criteria.tex
+index 184f924..c7b6e75 100644
+--- a/tables/task_criteria.tex
++++ b/tables/task_criteria.tex
+@@ -1,13 +1,18 @@
+-\captionof{table}{任务与成功标准空表。当前保留四个任务名称；道具、难度、初始条件、终点和容差在实物确认后逐项填写。}
+-\label{tab:criteria}
++\begin{table}[H]
++\centering
++\caption{真机任务及语言指令。}
++\label{tab:task-instructions}
+ \small
+-\begin{tabularx}{\textwidth}{@{}lYYYY@{}}
++\setlength{\tabcolsep}{4pt}
++\renewcommand{\arraystretch}{1.2}
++\begin{tabularx}{\linewidth}{@{}lY@{}}
+ \toprule
+-任务 & 道具／难度 & 初始条件 & 完整成功标准 & 容差／阶段判据\\
++任务 & 指令 \\
+ \midrule
+-放入抽屉 & \pending & \pending & \pending & \pending\\[2mm]
+-放进盒子 & \pending & \pending & \pending & \pending\\[2mm]
+-积木分类 & \pending & \pending & \pending & \pending\\[2mm]
+-插接 & \pending & \pending & \pending & \pending\\
++放入抽屉 & 拿起物体并将其放入抽屉。 \\
++放进盒子 & 拿起物体并将其放入盒子。 \\
++积木分类 & 将所有积木放入颜色对应的容器。 \\
++插接 & 将插接件插入对应孔位。 \\
+ \bottomrule
+ \end{tabularx}
++\end{table}
